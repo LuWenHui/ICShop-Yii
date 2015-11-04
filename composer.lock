@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8580bd82955b1fbb80d47024e184056e",
-    "content-hash": "e1929a97e872bdbaacc8530468eccb67",
+    "hash": "12eb36b529066b6f4a525b43ce2bfe01",
+    "content-hash": "de458b7a43473b8398fce045966eb7ef",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -58,16 +58,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "2.1.4",
+            "version": "1.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery.git",
-                "reference": "7751e69b615c6eca6f783a81e292a55725af6b85"
+                "reference": "1472290917f17af05e98007136096784f9051fab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery/zipball/7751e69b615c6eca6f783a81e292a55725af6b85",
-                "reference": "7751e69b615c6eca6f783a81e292a55725af6b85",
+                "url": "https://api.github.com/repos/jquery/jquery/zipball/1472290917f17af05e98007136096784f9051fab",
+                "reference": "1472290917f17af05e98007136096784f9051fab",
                 "shasum": ""
             },
             "require-dev": {
@@ -915,7 +915,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "bower-asset/jquery": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

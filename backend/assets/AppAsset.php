@@ -1,8 +1,8 @@
 <?php
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @link http://php.itcast.cn/
+ * @copyright Copyright (c) 2015 itcast
+ * @license all rights reserved
  */
 
 namespace backend\assets;
@@ -10,7 +10,7 @@ namespace backend\assets;
 use yii\web\AssetBundle;
 
 /**
- * @author Qiang Xue <qiang.xue@gmail.com>
+ * @author 苏小林 <suxiaolin@mail.com>
  * @since 2.0
  */
 class AppAsset extends AssetBundle
@@ -24,6 +24,6 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        'backend\assets\TodoAsset',
     ];
 }
