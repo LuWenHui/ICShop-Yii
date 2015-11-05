@@ -17,22 +17,24 @@ class AdminUser extends ActiveRecord implements IdentityInterface {
     }
 
     public function behaviors() {
-        return ArrayHelper::merge(parent::behaviors(), [
+        return [
             TimestampBehavior::className(),
-        ]);
+        ];
     }
 
     public function rules() {
         return [
             ['status', 'default', 'value' => self::STATUS_VALID],
             [['email', 'username', 'password_hash', 'status'], 'required'],
+            ['email', 'unique', 'targetClass' => static::className(), 'targetAttribute' => 'email'],
+            ['username', 'unique', 'targetClass' => static::className(), 'targetAttribute' => 'username'],
             [['created_at', 'updated_at'], 'number', 'integerOnly' => true],
             [['auth_key', 'password_hash'], 'string'],
         ];
     }
 
-    public static function findIdentity($id) {
-        return static::findOne($id);
+    public static function findIdentity($email) {
+        return static::findOne(['email' => $email]);
     }
 
     public static function findIdentityByAccessToken($token, $type = null) {

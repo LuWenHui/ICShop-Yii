@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use backend\assets\AppAsset;
 use yii\widgets\ActiveForm;
+use yii\captcha\Captcha;
 
 AppAsset::register($this);
 
@@ -12,7 +13,7 @@ $this->title = '传智播客-商城系统-登录';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<html lang="<?= Yii::$app->language ?>" class=" ">
     <head>
         <meta charset="<?= Yii::$app->charset ?>" />
         <title><?= $this->title ?></title>
@@ -21,47 +22,51 @@ $this->title = '传智播客-商城系统-登录';
         <?= Html::csrfMetaTags() ?>
         <?= $this->head() ?>
     </head>
-    <body>
+    <body class="">
     <?php $this->beginBody() ?>
-        <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
-            <a class="nav-brand" href="<?= Url::to('/') ?>">传智播客-商城系统</a>
-            <div class="row m-n">
-                <div class="col-md-4 col-md-offset-4 m-t-lg">
-                    <section class="panel">
-                        <header class="panel-heading text-center">
-                            登录
-                        </header>
-                        <?= Html::errorSummary($adminUserLoginForm, ['class' => 'alert alert-danger']) ?>
-                        <?php $form = ActiveForm::begin(['options' => ['class' => 'panel-body']]) ?>
-                            <div class="form-group">
-                                <label class="control-label">邮箱</label>
-                                <?= Html::activeInput('email', $adminUserLoginForm, 'email', ['placeholder' => 'test@example.com', 'class' => 'form-control']) ?>
+        <section id="content" class="m-t-lg wrapper-md animated fadeInUp">    
+            <div class="container aside-xl">
+                <a class="navbar-brand block" href="<?= Url::to('/') ?>">传智播客-商城系统</a>
+                <section class="m-b-lg">
+                    <header class="wrapper text-center">
+                        <strong>登入后台</strong>
+                    </header>
+                    <?= Html::errorSummary($adminUserLoginForm, ['class' => 'alert alert-danger']) ?>
+                    <?php $form = ActiveForm::begin(['enableClientValidation'=>false, 'options' => ['class' => 'panel-body', 'autocomplete' => 'false']]) ?>
+                        <div class="list-group">
+                            <div class="list-group-item">
+                                <?= Html::activeInput('email', $adminUserLoginForm, 'email', ['placeholder' => 'test@example.com', 'class' => 'form-control no-border']) ?>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">密码</label>
-                                <?= Html::activeInput('password', $adminUserLoginForm, 'password', ['placeholder' => '请输入密码', 'class' => 'form-control']) ?>
+                            <div class="list-group-item">
+                                <?= Html::activeInput('password', $adminUserLoginForm, 'password', ['placeholder' => '请输入密码', 'class' => 'form-control no-border']) ?>
                             </div>
-                            <div class="checkbox">
+                            <div class="list-group-item">
+                                <?= $form->field($adminUserLoginForm, 'captcha', ['options' => ['class' => '']])->widget(Captcha::className(), [
+                                    'captchaAction' => ['user/captcha'],
+                                ]) ?>
+                            </div>
+                            <div class="list-group-item">
                                 <label>
-                                <input type="checkbox"> 这是私人电脑
+                                    <?= Html::activeInput('checkbox', $adminUserLoginForm, 'rememberMe', ['checked' => $adminUserLoginForm->rememberMe ? 'checked' : '']) ?> 这是私人电脑
                                 </label>
                             </div>
+                        </div>
+                        <button type="submit" class="btn btn-lg btn-primary btn-block">登录</button>
+                        <div class="text-center m-t m-b">
                             <a href="javascript:" class="pull-right m-t-xs" data-toggle="tooltip" data-placement="top" title="请联系系统管理员"><small>忘记密码?</small></a>
-                            <button type="submit" class="btn btn-info">登录</button>
-                        <?php ActiveForm::end() ?>
-                    </section>
-                </div>
+                        </div>
+                    <?php ActiveForm::end() ?>
+                </section>
             </div>
         </section>
         <!-- footer -->
         <footer id="footer">
-            <div class="text-center padder clearfix">
+            <div class="text-center padder">
                 <p>
-                    <small>传智播客 &copy; <?= date('Y') ?></small>
+                    <small>传智播客<br /> &copy; <?= date('Y') ?></small>
                 </p>
             </div>
         </footer>
-        <!-- / footer -->
     <?php $this->endBody() ?>
     </body>
 </html>

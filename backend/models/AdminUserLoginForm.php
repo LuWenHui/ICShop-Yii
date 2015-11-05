@@ -10,15 +10,25 @@ class AdminUserLoginForm extends Model
     public $email;
     public $password;
     public $rememberMe = true;
+    public $captcha;
 
     private $_user;
 
     public function rules()
     {
         return [
-            [['email', 'password'], 'required'],
+            [['email', 'password', 'captcha'], 'required'],
+            ['captcha', 'captcha', 'captchaAction' => 'user/captcha'],
             ['rememberMe', 'boolean'],
             ['password', 'validatePassword'],
+        ];
+    }
+
+    public function attributeLabels() {
+        return [
+            'email' => Yii::t('app', 'Email'),
+            'password' => Yii::t('app', 'Password'),
+            'captcha' => Yii::t('app', 'Captcha'),
         ];
     }
 
