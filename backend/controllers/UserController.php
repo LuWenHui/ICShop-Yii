@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use yii\web\Controller;
 use yii\captcha\CaptchaAction;
+use yii\filters\AccessControl;
 use backend\models\AdminUserLoginForm;
 
 class UserController extends Controller {
@@ -13,7 +14,27 @@ class UserController extends Controller {
             'captcha' => [
                 'class' => CaptchaAction::className(),
                 'transparent' => true,
-                'foreColor' => '#ccc',
+                'foreColor' => 0xcccccc,
+            ],
+        ];
+    }
+
+    public function behaviors() {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'captcha'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
             ],
         ];
     }
@@ -25,5 +46,10 @@ class UserController extends Controller {
         } else {
             return $this->render('login', compact('adminUserLoginForm'));
         }
+    }
+
+    public function actionLogout() {
+        Yii::$app->user->logout();
+        return $this->goHome();
     }
 }

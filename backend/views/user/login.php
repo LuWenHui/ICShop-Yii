@@ -26,13 +26,13 @@ $this->title = '传智播客-商城系统-登录';
     <?php $this->beginBody() ?>
         <section id="content" class="m-t-lg wrapper-md animated fadeInUp">    
             <div class="container aside-xl">
-                <a class="navbar-brand block" href="<?= Url::to('/') ?>">传智播客-商城系统</a>
+                <a class="navbar-brand block" href="<?= Url::to('/') ?>">传智播客-商城系统-后台</a>
                 <section class="m-b-lg">
                     <header class="wrapper text-center">
                         <strong>登入后台</strong>
                     </header>
                     <?= Html::errorSummary($adminUserLoginForm, ['class' => 'alert alert-danger']) ?>
-                    <?php $form = ActiveForm::begin(['enableClientValidation'=>false, 'options' => ['class' => 'panel-body', 'autocomplete' => 'false']]) ?>
+                    <?php $form = ActiveForm::begin(['enableClientValidation'=>false, 'options' => ['class' => 'panel-body']]) ?>
                         <div class="list-group">
                             <div class="list-group-item">
                                 <?= Html::activeInput('email', $adminUserLoginForm, 'email', ['placeholder' => 'test@example.com', 'class' => 'form-control no-border']) ?>
@@ -46,8 +46,8 @@ $this->title = '传智播客-商城系统-登录';
                                 ]) ?>
                             </div>
                             <div class="list-group-item">
-                                <label>
-                                    <?= Html::activeInput('checkbox', $adminUserLoginForm, 'rememberMe', ['checked' => $adminUserLoginForm->rememberMe ? 'checked' : '']) ?> 这是私人电脑
+                                <label class="checkbox-inline i-checks">
+                                    <?= Html::activeInput('checkbox', $adminUserLoginForm, 'rememberMe', ['checked' => $adminUserLoginForm->rememberMe ? 'checked' : '']) ?><i></i> 这是私人电脑
                                 </label>
                             </div>
                         </div>

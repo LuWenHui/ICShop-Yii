@@ -1,71 +1,46 @@
 <?php
-
-use backend\assets\AppAsset;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
+use backend\assets\AppAsset;
 
 AppAsset::register($this);
+
+$this->context->layout = false;
+$this->title = '传智播客-商城系统';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
-<body>
-<?php $this->beginBody() ?>
-
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = [
-            'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-            'url' => ['/site/logout'],
-            'linkOptions' => ['data-method' => 'post']
-        ];
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-    </div>
-</footer>
-
-<?php $this->endBody() ?>
-</body>
+<html lang="<?= Yii::$app->language ?>" class="app">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>" />
+        <title><?= $this->title ?></title>
+        <meta name="description" content="<?= $this->title ?>" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <?= Html::csrfMetaTags() ?>
+        <?= $this->head() ?>
+    </head>
+    <body class="" >
+        <?php $this->beginBody() ?>
+        <section class="vbox">
+            <!-- .header -->
+                <?= $this->render('_partials/_header') ?>
+            <!-- /.header -->
+            <section>
+                <section class="hbox stretch">
+                    <!-- .aside -->
+                        <?= $this->render('_partials/_aside') ?>
+                    <!-- /.aside -->
+                    <section id="content">
+                        <section class="vbox">
+                            <section class="scrollable wrapper">
+                                <?= $content ?>
+                            </section>
+                        </section>
+                        <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <?php $this->endBody() ?>
+    </body>
 </html>
 <?php $this->endPage() ?>
