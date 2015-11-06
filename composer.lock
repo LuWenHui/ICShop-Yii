@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "581597a7d75d1ea3c8d87bc4249ff98d",
-    "content-hash": "b47fa9ed021839f20cbaaebc4335e537",
+    "hash": "b86019d7a9299b3ff6faf7ece078cae0",
+    "content-hash": "2eb83e1793c0c6ffe3aaddee28410028",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -654,6 +654,47 @@
                 "image"
             ],
             "time": "2014-07-13 09:19:12"
+        },
+        {
+            "name": "zhuzhichao/ip-location-zh",
+            "version": "v1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zhuzhichao/ip-location-zh.git",
+                "reference": "2060bad9e097d5ec4c53378836f4a5264add6dd3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://packagist.phpcomposer.com/files/zhuzhichao/ip-location-zh/2060bad9e097d5ec4c53378836f4a5264add6dd3.zip",
+                "reference": "2060bad9e097d5ec4c53378836f4a5264add6dd3",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/IpLocationZh.php"
+                ],
+                "psr-4": {
+                    "Zhuzhichao\\IpLocationZh\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "zhuzhichao",
+                    "email": "me@zhuzhichao.com"
+                }
+            ],
+            "description": "get the ip's true location with Chinese",
+            "keywords": [
+                "Chinese",
+                "IP",
+                "location"
+            ],
+            "time": "2015-11-04 03:45:24"
         }
     ],
     "packages-dev": [

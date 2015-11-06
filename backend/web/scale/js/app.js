@@ -88,7 +88,13 @@ Modernizr.addTest('ios7 ipad',function(){return!!navigator.userAgent.match(/iPad
     $.ajax(this.options.url).done(function(r){
       that.$content = r;
       that.complete();
-    });
+    }).always(function(r) {
+	  console.log(r);
+	  if (r.status == 404) {
+        that.$content = r.responseText;
+		that.complete();
+      }
+	});
   }
 
   Bjax.prototype.complete = function (){

@@ -34,7 +34,7 @@ return [
             ],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'whoops/error',
         ],
     ],
     'params' => $params,

@@ -13,7 +13,7 @@ $this->title = '传智播客-商城系统-登录';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>" class=" ">
+<html lang="<?= Yii::$app->language ?>" class="bg-dark">
     <head>
         <meta charset="<?= Yii::$app->charset ?>" />
         <title><?= $this->title ?></title>

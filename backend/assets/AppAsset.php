@@ -21,11 +21,11 @@ class AppAsset extends AssetBundle
         'css/main.css',
     ];
     public $js = [
-        'js/cookie.js',
         'js/main.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
+        'backend\assets\UtilsAsset',
         'backend\assets\ScaleAsset',
     ];
 }

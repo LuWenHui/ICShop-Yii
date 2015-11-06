@@ -3,9 +3,10 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 use yii\db\ActiveRecord;
 use Identicon\Identicon;
-use yii\helpers\ArrayHelper;
+use Zhuzhichao\IpLocationZh\Ip;
 use yii\behaviors\TimestampBehavior;
 use yii\web\IdentityInterface;
 
@@ -13,7 +14,8 @@ class AdminUser extends ActiveRecord implements IdentityInterface {
     const STATUS_VALID = 1;
     const STATUS_INVALID = 0;
 
-    public $_avatar;
+    protected $_avatar;
+    protected $_ipLocation;
 
     public static function tableName() {
         return '{{%admin_user}}';
@@ -77,5 +79,13 @@ class AdminUser extends ActiveRecord implements IdentityInterface {
             $this->_avatar = (new Identicon())->getImageDataUri($this->email);
         }
         return $this->_avatar;
+    }
+
+    public function getIpLocation() {
+        if (!isset($this->_ipLocation)) {
+            $locations = Ip::find(Yii::$app->request->userIp);
+            $this->_ipLocation = trim($locations[1] . ' ' . $locations[2]);
+        }
+        return $this->_ipLocation;
     }
 }
