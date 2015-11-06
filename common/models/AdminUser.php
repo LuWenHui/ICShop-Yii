@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\db\ActiveRecord;
+use Identicon\Identicon;
 use yii\helpers\ArrayHelper;
 use yii\behaviors\TimestampBehavior;
 use yii\web\IdentityInterface;
@@ -11,6 +12,8 @@ use yii\web\IdentityInterface;
 class AdminUser extends ActiveRecord implements IdentityInterface {
     const STATUS_VALID = 1;
     const STATUS_INVALID = 0;
+
+    public $_avatar;
 
     public static function tableName() {
         return '{{%admin_user}}';
@@ -67,5 +70,12 @@ class AdminUser extends ActiveRecord implements IdentityInterface {
 
     public function generateAuthKey() {
         $this->auth_key = Yii::$app->security->generateRandomString();
+    }
+
+    public function getAvatar() {
+        if (!isset($this->_avatar)) {
+            $this->_avatar = (new Identicon())->getImageDataUri($this->email);
+        }
+        return $this->_avatar;
     }
 }

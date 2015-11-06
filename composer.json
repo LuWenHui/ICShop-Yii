@@ -16,7 +16,8 @@
         "yiisoft/yii2": ">=2.0.6",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "bower-asset/jquery": "1.11.*@stable"
+        "bower-asset/jquery": "1.11.*@stable",
+        "yzalis/identicon": "^1.1"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
