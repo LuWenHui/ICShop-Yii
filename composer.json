@@ -18,7 +18,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "bower-asset/jquery": "1.11.*@stable",
         "yzalis/identicon": "^1.1",
-        "zhuzhichao/ip-location-zh": "^1.7"
+        "zhuzhichao/ip-location-zh": "^1.7",
+        "nullref/yii2-datatables": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
