@@ -18,6 +18,8 @@ class m151109_014101_create_product_attribute_table extends Migration
             'updated_time' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
+        
+        $this->createIndex('category_id', self::PRODUCT_ATTRIBUTE_TABLE, 'category_id');
     }
 
     public function down()

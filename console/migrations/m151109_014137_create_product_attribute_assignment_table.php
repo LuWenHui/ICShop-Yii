@@ -18,6 +18,8 @@ class m151109_014137_create_product_attribute_assignment_table extends Migration
             'updated_time' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
+        
+        $this->createIndex('product_id', self::PRODUCT_ATTRIBUTE_ASSIGNMENT_TABLE, 'product_id');
     }
 
     public function down()

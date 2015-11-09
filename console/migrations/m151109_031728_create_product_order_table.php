@@ -20,6 +20,8 @@ class m151109_031728_create_product_order_table extends Migration
             'updated_time' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
+        
+        $this->createIndex('user_id', self::PRODUCT_ORDER_TABLE, 'user_id');
     }
 
     public function down()

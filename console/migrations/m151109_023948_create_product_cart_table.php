@@ -19,6 +19,9 @@ class m151109_023948_create_product_cart_table extends Migration
             'updated_time' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
+        
+        $this->createIndex('user_id', self::PRODUCT_CART_TABLE, 'user_id');
+        $this->createIndex('product_id', self::PRODUCT_CART_TABLE, 'product_id');
     }
 
     public function down()
