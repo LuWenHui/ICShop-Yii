@@ -10,7 +10,7 @@ class IeJsAsset extends AssetBundle {
     public $baseUrl = '@web/scale';
 
     public $jsOptions = [
-        'condition' => 'lte IE9',
+        'condition' => 'lte IE 9',
         'position' => View::POS_HEAD,
     ];
 
