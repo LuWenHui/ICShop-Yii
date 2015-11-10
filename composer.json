@@ -19,13 +19,12 @@
         "bower-asset/jquery": "1.11.*@stable",
         "yzalis/identicon": "^1.1",
         "zhuzhichao/ip-location-zh": "^1.7",
-        "nullref/yii2-datatables": "^1.0"
+        "yiisoft/yii2-faker": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
         "yiisoft/yii2-debug": "*",
-        "yiisoft/yii2-gii": "*",
-        "yiisoft/yii2-faker": "*"
+        "yiisoft/yii2-gii": "*"
     },
     "config": {
         "process-timeout": 1800
