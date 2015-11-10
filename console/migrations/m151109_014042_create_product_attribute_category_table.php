@@ -12,8 +12,8 @@ class m151109_014042_create_product_attribute_category_table extends Migration
             'id' => $this->primaryKey(),
             'name' => $this->string(32)->notNull(),
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
     }

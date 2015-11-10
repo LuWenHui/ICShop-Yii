@@ -16,8 +16,8 @@ class m151109_031728_create_product_order_table extends Migration
             'total_price' => $this->decimal(8, 2)->notNull(),
             'contact' => $this->string(20)->notNull() . ' comment"联系方式"',
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         

@@ -15,8 +15,8 @@ class m151109_085003_create_product_comment_table extends Migration
             'star' => $this->smallInteger()->notNull()->defaultValue(3),
             'content' => $this->string(300)->notNull(),
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         

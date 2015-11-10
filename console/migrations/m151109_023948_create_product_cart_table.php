@@ -15,8 +15,8 @@ class m151109_023948_create_product_cart_table extends Migration
             'product_attribute_assignment_ids' => $this->string(200)->notNull(),
             'quantity' => $this->integer()->notNull(),
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         

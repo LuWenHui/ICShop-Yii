@@ -14,8 +14,8 @@ class m151109_014101_create_product_attribute_table extends Migration
             'type' => $this->smallInteger()->notNull(),
             'option' => $this->string(200),
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         

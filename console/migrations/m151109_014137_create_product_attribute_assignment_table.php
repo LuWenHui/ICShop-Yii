@@ -14,8 +14,8 @@ class m151109_014137_create_product_attribute_assignment_table extends Migration
             'attribute_option' => $this->string(16)->notNull(),
             'price' => $this->decimal(8, 2)->notNull()->defaultValue(0.00),
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         

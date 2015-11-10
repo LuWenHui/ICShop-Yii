@@ -14,8 +14,8 @@ class m151106_065514_create_product_picture_table extends Migration
             'display_order' => $this->integer()->notNull()->defaultValue(0),
             
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         
         $this->createIndex('product_id', self::PRODUCT_PICTURE_TABLE, 'product_id');

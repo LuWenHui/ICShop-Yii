@@ -17,8 +17,8 @@ class m151109_031815_create_product_order_compose_table extends Migration
             'product_count' => $this->integer()->notNull()->defaultValue(1) . ' comment"购买数量"',
             'settlement_price' => $this->decimal(8, 2)->notNull() . ' comment"结算价格"',
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         

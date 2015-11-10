@@ -31,8 +31,8 @@ class m151106_060246_create_product_table extends Migration
             'display_order' => $this->bigInteger()->notNull()->defaultValue(0) . ' comment"显示顺序"',
             'score' => $this->integer()->notNull()->defaultValue(0) . ' comment"赠送积分"',
             
-            'created_time' => $this->integer()->notNull() . ' comment"创建时间"',
-            'updated_time' => $this->integer()->notNull() . ' comment"修改时间"',
+            'created_at' => $this->integer()->notNull() . ' comment"创建时间"',
+            'updated_at' => $this->integer()->notNull() . ' comment"修改时间"',
             'status' => $this->smallInteger()->notNull()->defaultValue(1) . ' comment"状态, 0:删除, 1:默认"',
         ], $tableOptions);
         
@@ -40,8 +40,8 @@ class m151106_060246_create_product_table extends Migration
         $this->createIndex('category_id', self::PRODUCT_TABLE, ['category_id']);
         $this->createIndex('status', self::PRODUCT_TABLE, 'status');
         $this->createIndex('display_order', self::PRODUCT_TABLE, 'display_order');
-        $this->createIndex('created_time', self::PRODUCT_TABLE, 'created_time');
-        $this->createIndex('updated_time', self::PRODUCT_TABLE, 'updated_time');
+        $this->createIndex('created_at', self::PRODUCT_TABLE, 'created_at');
+        $this->createIndex('updated_at', self::PRODUCT_TABLE, 'updated_at');
     }
 
     public function down()

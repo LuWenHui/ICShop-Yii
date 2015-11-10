@@ -13,9 +13,10 @@ class m151107_040801_create_product_category_table extends Migration
             'name' => $this->string(32)->notNull(),
             'slug' => $this->string()->notNull()->defaultValue(''),
             'parent_id' => $this->integer()->notNull()->defaultValue(0),
+            'display_order' => $this->integer()->notNull()->defaultVAlue(0),
             
-            'created_time' => $this->integer()->notNull(),
-            'updated_time' => $this->integer()->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
             'status' => $this->smallInteger()->notNull()->defaultValue(1),
         ], $this->db->driverName == 'mysql' ? 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB' : '');
         
@@ -24,8 +25,8 @@ class m151107_040801_create_product_category_table extends Migration
         $this->insert(self::PRODUCT_CATEGORY_TABLE, [
             'id' => 0,
             'name' => Yii::t('app', 'rootCategory'),
-            'created_time' => time(),
-            'updated_time' => time(),
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
     }
 
