@@ -44,6 +44,13 @@ var uiLoad = uiLoad || {};
         script.onerror = function (e) {
             deferred.reject(e);
         };
+        /*Compatible IE 8*/
+        script.onreadystatechange = function () {
+            if (this.readyState === 'loaded' || this.readyState === 'complete') {
+                this.onload();
+            }
+        };
+        /* / Compatible IE 8*/
         $document.body.appendChild(script);
         loaded[src] = deferred;
 
@@ -69,7 +76,14 @@ var uiLoad = uiLoad || {};
         style.onerror = function (e) {
             deferred.reject(e);
         };
-        $document.head.appendChild(style);
+        /*Compatible IE 8*/
+        style.onreadystatechange = function () {
+            if (this.readyState === 'loaded' || this.readyState === 'complete') {
+                this.onload();
+            }
+        };
+        /* / Compatible IE 8*/
+        ($document.head || $document.getElementsByTagName("head")[0]).appendChild(style);
         loaded[href] = deferred;
 
         return deferred.promise();

@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use common\components\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\ArrayHelper;
 
 class ProductCategory extends ActiveRecord {
     public static function tableName() {
@@ -45,7 +46,7 @@ class ProductCategory extends ActiveRecord {
     public static function getTreeIdNameList($refresh = false) {
         static $_treeList;
         if (!isset($_treeList) || $refresh) {
-            $_treeList = static::buildSelectTree(static::getList());
+            $_treeList = ArrayHelper::merge([0 => 'root'], static::buildSelectTree(static::getList()));
         }
         return $_treeList;
     }
