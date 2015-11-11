@@ -2,6 +2,7 @@
 
 use yii\widgets\DetailView;
 use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
 
 $this->title = '查看产品分类-' . $model->name;
 
@@ -18,7 +19,7 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'View');
                 'name',
                 [
                     'attribute' => 'parent_id',
-                    'value' => $model->parent->name,
+                    'value' => ArrayHelper::getValue($model->parent, 'name'),
                 ],
                 'display_order',
                 'slug',

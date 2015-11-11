@@ -7,8 +7,24 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use common\models\ProductCategory;
 use backend\models\ProductCategorySearch;
+use yii\filters\AccessControl;
 
 class ProductCategoryController extends Controller {
+    public function behaviors() {
+        return [
+            [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+        ];
+    }
+    
     public function actionIndex() {
         $filterModel = new ProductCategorySearch();
         $dataProvider = $filterModel->search(Yii::$app->request->queryParams);
