@@ -5,7 +5,6 @@ use backend\assets\AppAsset;
 AppAsset::register($this);
 
 $this->context->layout = false;
-$this->title = '传智播客-商城系统';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -18,7 +17,7 @@ $this->title = '传智播客-商城系统';
         <?= Html::csrfMetaTags() ?>
         <?= $this->head() ?>
     </head>
-    <body class="" >
+    <body class="">
         <?php $this->beginBody() ?>
         <section class="vbox">
             <!-- .header -->
@@ -32,6 +31,13 @@ $this->title = '传智播客-商城系统';
                     <section id="content">
                         <section class="vbox">
                             <section class="scrollable wrapper">
+                                <?= $this->render('_partials/_breadcrumbs') ?>
+                                <div class="m-b-md">
+                                    <h3 class="m-b-none">
+                                        <i class="i i-arrow-left3"></i>
+                                        <?= $this->title ?>
+                                    </h3>
+                                </div>
                                 <?= $content ?>
                             </section>
                         </section>

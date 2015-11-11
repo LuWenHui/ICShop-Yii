@@ -3,7 +3,6 @@ $this->title = '控制面板';
 ?>
 <section class="row m-b-md">
     <div class="col-sm-6">
-        <h3 class="m-b-xs text-black"><?= $this->title ?></h3>
         <small>欢迎回来, <?= Yii::$app->user->identity->username ?>, <i class="fa fa-map-marker fa-lg text-primary"></i> <?= Yii::$app->user->identity->ipLocation ?></small>
     </div>
 </section>
@@ -66,7 +65,7 @@ $this->title = '控制面板';
         <div class="panel b-a">
             <div class="panel-heading no-border bg-primary lt text-center">
                 <a href="#">
-                <i class="fa fa-facebook fa fa-3x m-t m-b text-white"></i>
+                <i class="fa fa-qq fa fa-3x m-t m-b text-white"></i>
                 </a>
             </div>
             <div class="padder-v text-center clearfix">
@@ -85,7 +84,7 @@ $this->title = '控制面板';
         <div class="panel b-a">
             <div class="panel-heading no-border bg-info lter text-center">
                 <a href="#">
-                <i class="fa fa-twitter fa fa-3x m-t m-b text-white"></i>
+                <i class="fa fa-weibo fa fa-3x m-t m-b text-white"></i>
                 </a>
             </div>
             <div class="padder-v text-center clearfix">
@@ -101,3 +100,93 @@ $this->title = '控制面板';
         </div>
     </div>
 </div>
+<section class="panel panel-default">
+<header class="panel-heading font-bold">订单量</header>
+<div class="panel-body">
+  <div id="flot-1ine" style="height:250px"></div>
+</div>
+<footer class="panel-footer bg-white">
+  <div class="row text-center no-gutter">
+    <div class="col-xs-3 b-r b-light">
+      <p class="h3 font-bold m-t">5,860</p>
+      <p class="text-muted">Orders</p>
+    </div>
+    <div class="col-xs-3 b-r b-light">
+      <p class="h3 font-bold m-t">10,450</p>
+      <p class="text-muted">Sellings</p>
+    </div>
+    <div class="col-xs-3 b-r b-light">
+      <p class="h3 font-bold m-t">21,230</p>
+      <p class="text-muted">Items</p>
+    </div>
+    <div class="col-xs-3">
+      <p class="h3 font-bold m-t">7,230</p>
+      <p class="text-muted">Customers</p>                        
+    </div>
+  </div>
+</footer>
+</section>
+<?php
+$js = <<<'JS'
+uiLoad.load(jp_config['flot']).then(function() {
+    var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    var d1 = [];
+    for (var i = 0; i <= 11; i += 1) {
+      d1.push([i, parseInt((Math.floor(Math.random() * (1 + 20 - 10))) + 10)]);
+    }
+    
+    $("#flot-1ine").length && $.plot($("#flot-1ine"), [{
+            data: d1
+        }], 
+        {
+          series: {
+              lines: {
+                  show: true,
+                  lineWidth: 1,
+                  fill: true,
+                  fillColor: {
+                      colors: [{
+                          opacity: 0.3
+                      }, {
+                          opacity: 0.3
+                      }]
+                  }
+              },
+              points: {
+                  radius: 3,
+                  show: true
+              },
+              grow: {
+                active: true,
+                steps: 50
+              },
+              shadowSize: 2
+          },
+          grid: {
+              hoverable: true,
+              clickable: true,
+              tickColor: "#f0f0f0",
+              borderWidth: 1,
+              color: '#f0f0f0'
+          },
+          colors: ["#1bb399"],
+          xaxis:{
+          },
+          yaxis: {
+            ticks: 5
+          },
+          tooltip: true,
+          tooltipOpts: {
+            content: "chart: %x.1 is %y.4",
+            defaultTheme: false,
+            shifts: {
+              x: 0,
+              y: 20
+            }
+          }
+        }
+    );
+});
+JS;
+$this->registerJs($js);
+?>

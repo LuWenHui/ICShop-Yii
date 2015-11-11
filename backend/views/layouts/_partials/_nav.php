@@ -57,12 +57,12 @@ use yii\helpers\Url;
             <i class="i i-circle-sm-o text"></i>
             <i class="i i-circle-sm text-active"></i>
             </span>
-            <i class="i i-stack icon">
+            <i class="i i-meter icon">
             </i>
             <span class="font-bold">订单管理</span>
             </a>
             <ul class="nav dk">
-                <li >
+                <li>
                     <a href="<?= Url::to(['order/index']) ?>" class="auto">
                     <i class="i i-dot"></i>
                     <span>订单列表</span>

@@ -11,6 +11,14 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
+    'controllerMap' => [
+        'fixture' => [
+            'class' => 'yii\faker\FixtureController',
+            'templatePath' => '@tests/codeception/common/templates/fixtures',
+            'fixtureDataPath' => '@tests/codeception/common/fixtures/data',
+            'namespace' => 'tests\codeception\common\fixtures',
+        ],
+    ],
     'components' => [
         'log' => [
             'targets' => [

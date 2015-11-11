@@ -26,7 +26,7 @@ class ScaleAsset extends AssetBundle
     public $js = [
         "js/app.js",
         "js/slimscroll/jquery.slimscroll.min.js",
-        "js/app.plugin.js",
+        //"js/app.plugin.js",
     ];
     public $depends = [
         'yii\bootstrap\BootstrapPluginAsset',
