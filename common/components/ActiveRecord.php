@@ -33,4 +33,15 @@ class ActiveRecord extends \yii\db\ActiveRecord {
 
         return $query->andWhere($condition);
     }
+    
+    public static function getStatusLabels() {
+        return [
+            self::STATUS_DEFAULT => '默认',
+            self::STATUS_DELETE => '删除',
+        ];
+    }
+    
+    public function getStatusLabel() {
+        return ArrayHelper::getValue(static::getStatusLabels(), $this->status);
+    }
 }

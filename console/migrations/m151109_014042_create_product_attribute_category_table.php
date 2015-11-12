@@ -10,7 +10,7 @@ class m151109_014042_create_product_attribute_category_table extends Migration
     {
         $this->createTable(self::PRODUCT_ATTRIBUTE_CATEGORY_TABLE, [
             'id' => $this->primaryKey(),
-            'name' => $this->string(32)->notNull(),
+            'name' => $this->string(32)->notNull()->unique(),
             
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
