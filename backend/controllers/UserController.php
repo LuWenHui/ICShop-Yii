@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use yii\web\Controller;
-use yii\captcha\CaptchaAction;
+use common\components\actions\CaptchaAction;
 use yii\filters\AccessControl;
 use backend\models\AdminUserLoginForm;
 
