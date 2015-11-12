@@ -3,7 +3,7 @@ use yii\grid\GridView;
 use yii\grid\ActionColumn;
 use yii\helpers\Url;
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'ProductCategory'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Product Category'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = Yii::t('app', 'List');
 
 $this->title = '产品分类';

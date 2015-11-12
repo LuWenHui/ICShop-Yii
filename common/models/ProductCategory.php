@@ -29,13 +29,13 @@ class ProductCategory extends ActiveRecord {
     public function attributeLabels() {
         return [
             'id' => Yii::t('app', 'Id'),
-            'name' => Yii::t('app', 'ProductCategoryName'),
-            'parent_id' => Yii::t('app', 'ProductCategoryParent'),
+            'name' => Yii::t('app', 'Product Category Name'),
+            'parent_id' => Yii::t('app', 'Product Category Parent'),
             'slug' => Yii::t('app', 'Slug'),
-            'display_order' => Yii::t('app', 'DisplayOrder'),
+            'display_order' => Yii::t('app', 'Display Order'),
             'status' => Yii::t('app', 'Status'),
-            'created_at' => Yii::t('app', 'CreatedAt'),
-            'updated_at' => Yii::t('app', 'UpdatedAt'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'updated_at' => Yii::t('app', 'Updated At'),
         ];
     }
     
