@@ -57,4 +57,12 @@ class ProductAttributeCategory extends \common\components\ActiveRecord
             'status' => Yii::t('app', 'Status'),
         ];
     }
+    
+    public static function getList($refresh = false) {
+        static $_list;
+        if (!isset($_list) || $refresh) {
+            $_list = static::softFind()->all();
+        }
+        return $_list;
+    }
 }

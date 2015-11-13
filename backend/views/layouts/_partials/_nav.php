@@ -5,7 +5,7 @@ use yii\helpers\Url;
 ?>
 <!-- nav -->
 <nav class="nav-primary hidden-xs">
-    <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">Start</div>
+    <div class="text-muted text-sm hidden-nav-xs padder m-t-sm m-b-sm">目录</div>
     <ul class="nav nav-main" data-ride="collapse">
         <li >
             <a href="<?= Url::to(['dashboard/index']) ?>" class="auto">
@@ -47,6 +47,24 @@ use yii\helpers\Url;
                     <a href="<?= Url::to(['product-category/create']) ?>" class="auto">
                     <i class="i i-dot"></i>
                     <span>添加分类</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="<?= Url::to(['product-attribute-category/index']) ?>" class="auto">
+                    <i class="i i-dot"></i>
+                    <span>属性分类</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="<?= Url::to(['product-attribute/index']) ?>" class="auto">
+                    <i class="i i-dot"></i>
+                    <span>属性列表</span>
+                    </a>
+                </li>
+                <li >
+                    <a href="<?= Url::to(['product-attribute/create']) ?>" class="auto">
+                    <i class="i i-dot"></i>
+                    <span>添加属性</span>
                     </a>
                 </li>
             </ul>

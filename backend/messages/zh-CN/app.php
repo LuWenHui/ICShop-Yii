@@ -14,6 +14,9 @@ return [
     'Create' => '添加',
     'Delete' => '删除',
     'View' => '查看',
+    'Category ID' => '分类',
+    'Create {modelClass}: ' => '添加 {modelClass}: ',
+    'Update {modelClass}: ' => '修改 {modelClass}: ',
     
     // user
     'Email' => '邮箱',
@@ -28,8 +31,13 @@ return [
     
     // product_attribute_category
     'Product Attribute Categories' => '产品属性分类',
-    'Product Attribute Category' => '分类属性分类',
-    'Create {modelClass}: ' => '添加 {modelClass}: ',
+    'Product Attribute Category' => '产品属性分类',
     'Create Product Attribute Category' => '添加产品属性分类',
-    'Update {modelClass}: ' => '修改 {modelClass}: ',
+    
+    // product_attribute
+    'Product Attributes' => '产品属性',
+    'Product Attribute' => '产品属性',
+    'Create Product Attribute' => '添加产品属性',
+    'Product Attribute Type' => '属性类型',
+    'Product Attribute Option' => '属性可选项',
 ];

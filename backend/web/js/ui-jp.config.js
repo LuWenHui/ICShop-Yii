@@ -12,5 +12,10 @@ var jp_config = {
     chosen: [
         "/scale/js/chosen/chosen.css",
         "/scale/js/chosen/chosen.jquery.min.js"
+    ],
+    'bootstrap-tokenfield': [
+        '/js/components/bootstrap-tokenfield/css/bootstrap-tokenfield.css',
+        '/js/components/typeahead.js/typeahead.bundle.min.js',
+        '/js/components/bootstrap-tokenfield/bootstrap-tokenfield.js'
     ]
 };

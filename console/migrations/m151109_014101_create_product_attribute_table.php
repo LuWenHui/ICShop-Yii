@@ -9,6 +9,7 @@ class m151109_014101_create_product_attribute_table extends Migration
     public function up()
     {
         $this->createTable(self::PRODUCT_ATTRIBUTE_TABLE, [
+            'id' => $this->primaryKey(),
             'category_id' => $this->integer()->notNull(),
             'name' => $this->string(16)->notNull(),
             'type' => $this->smallInteger()->notNull(),
