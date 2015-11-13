@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
+use common\models\ProductAttributeCategory;
 use yii\behaviors\TimestampBehavior;
 
 /**
@@ -64,10 +66,19 @@ class ProductAttribute extends \common\components\ActiveRecord
         ];
     }
     
+    public function getCategory() {
+        return $this->hasOne(ProductAttributeCategory::className(), ['id' => 'category_id']);
+    }
+    
+    public function getTypeLabel() {
+        return ArrayHelper::getValue(static::getTypeLabels(), $this->type);
+    }
+    
     public static function getTypeLabels() {
         return [
             self::TYPE_UNIQUE => '唯一',
             self::TYPE_MULTIPLE => '可多选',
         ];
     }
+    
 }

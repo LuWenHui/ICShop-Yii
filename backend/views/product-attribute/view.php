@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -29,13 +30,22 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'category_id',
+            [
+                'attribute' => 'category_id',
+                'value' => ArrayHelper::getValue($model, 'category.name'),
+            ],
             'name',
-            'type',
+            [
+                'attribute' => 'type',
+                'value' => ArrayHelper::getValue($model, 'typeLabel'),
+            ],
             'option',
-            'created_at',
-            'updated_at',
-            'status',
+            'created_at:datetime',
+            'updated_at:datetime',
+            [
+                'attribute' => 'status',
+                'value' => ArrayHelper::getValue($model, 'statusLabel'),
+            ],
         ],
     ]) ?>
 
