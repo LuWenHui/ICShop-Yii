@@ -21,6 +21,7 @@
         "zhuzhichao/ip-location-zh": "^1.7",
         "yiisoft/yii2-faker": "^2.0",
         "gregwar/captcha": "1.*",
+        "yiisoft/yii2-jui": "~2.0.0",
         "machour/yii2-notifications": "@dev"
     },
     "require-dev": {
