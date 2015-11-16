@@ -76,7 +76,7 @@ class ProductAttribute extends \common\components\ActiveRecord
     
     public static function getTypeLabels() {
         return [
-            self::TYPE_UNIQUE => '唯一',
+            self::TYPE_UNIQUE => '唯一值',
             self::TYPE_MULTIPLE => '可多选',
         ];
     }

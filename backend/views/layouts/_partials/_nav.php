@@ -18,6 +18,7 @@ use yii\helpers\StringHelper;
             ],
             [
                 'label' => '产品管理',
+                'active' => StringHelper::startsWith($this->context->route, 'product'),
                 'icon' => 'i i-statistics icon',
                 'rightIcon' => 'i i-circle-sm',
                 'font' => 'font-bold',

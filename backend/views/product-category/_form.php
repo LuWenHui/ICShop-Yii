@@ -27,7 +27,11 @@ use common\models\ProductCategory;
 <?php
 $js = <<<'JS'
 uiLoad.load(jp_config['chosen']).then(function() {
-    $(".chosen-select").chosen();
+    $(".chosen-select").chosen({
+        allow_single_deselect: true,
+        no_results_text: '没有记录匹配',
+        placeholder_text_single: '请选择一个分类(不选择即表示顶级分类)'
+    });
 });
 JS;
 $this->registerJs($js);

@@ -21,7 +21,9 @@ class ProductCategory extends ActiveRecord {
     public function rules() {
         return [
             ['status', 'default', 'value' => self::STATUS_DEFAULT],
-            [['name', 'status', 'parent_id'], 'required'],
+            ['parent_id', 'number', 'integerOnly' => true],
+            ['parent_id', 'default', 'value' => 0],
+            [['name', 'status'], 'required'],
             [['name', 'slug'], 'string'],
         ];
     }
@@ -46,7 +48,7 @@ class ProductCategory extends ActiveRecord {
     public static function getTreeIdNameList($refresh = false) {
         static $_treeList;
         if (!isset($_treeList) || $refresh) {
-            $_treeList = ArrayHelper::merge([0 => 'root'], static::buildSelectTree(static::getList()));
+            $_treeList = ArrayHelper::merge([0 => ''], static::buildSelectTree(static::getList()));
         }
         return $_treeList;
     }
