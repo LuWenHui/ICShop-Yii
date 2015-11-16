@@ -62,6 +62,7 @@ use yii\helpers\StringHelper;
             ],
             [
                 'label' => '订单管理',
+                'active' => StringHelper::startsWith($this->context->route, 'order'),
                 'icon' => 'i i-meter icon',
                 'rightIcon' => 'i i-circle-sm',
                 'font' => 'font-bold',

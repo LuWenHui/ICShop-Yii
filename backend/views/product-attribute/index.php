@@ -12,7 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="product-attribute-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -26,9 +25,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'category_id',
+            [
+                'attribute' => 'category_id',
+                'value' => 'category.name',
+            ],
             'name',
-            'type',
+            [
+                'attribute' => 'type',
+                'value' => 'typeLabel',
+            ],
             'option',
             // 'created_at',
             // 'updated_at',
