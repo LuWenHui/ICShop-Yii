@@ -23,7 +23,8 @@
         "gregwar/captcha": "1.*",
         "yiisoft/yii2-jui": "~2.0.0",
         "machour/yii2-notifications": "@dev",
-        "trntv/yii2-file-kit": "^1.1"
+        "trntv/yii2-file-kit": "^1.1",
+        "kucha/ueditor": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
