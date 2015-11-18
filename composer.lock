@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "de48015b266773537b2a7478ca351ce3",
-    "content-hash": "0f1f557e39a71db0b9d13df8e4e97cc8",
+    "hash": "3b51acf266701bc2071a746b8d412b94",
+    "content-hash": "3efc49ed8614440b7e515272c5034bed",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -642,16 +642,16 @@
         },
         {
             "name": "kucha/ueditor",
-            "version": "1.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/BigKuCha/yii2-ueditor-widget.git",
-                "reference": "b41439ee0c69efc800a53087c20d8bfcea0f9507"
+                "url": "https://github.com/PHP-ITcast/yii2-ueditor-widget.git",
+                "reference": "ee23f3529a4cd98e0285a07ecad6c603e695fa72"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/BigKuCha/yii2-ueditor-widget/b41439ee0c69efc800a53087c20d8bfcea0f9507.zip",
-                "reference": "b41439ee0c69efc800a53087c20d8bfcea0f9507",
+                "url": "https://api.github.com/repos/PHP-ITcast/yii2-ueditor-widget/zipball/ee23f3529a4cd98e0285a07ecad6c603e695fa72",
+                "reference": "ee23f3529a4cd98e0285a07ecad6c603e695fa72",
                 "shasum": ""
             },
             "type": "library",
@@ -660,7 +660,6 @@
                     "kucha\\ueditor\\": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "null"
             ],
@@ -671,7 +670,10 @@
                 }
             ],
             "description": "desc",
-            "time": "2015-02-06 02:01:30"
+            "support": {
+                "source": "https://github.com/PHP-ITcast/yii2-ueditor-widget/tree/master"
+            },
+            "time": "2015-11-17 09:47:56"
         },
         {
             "name": "league/flysystem",
@@ -1712,7 +1714,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "bower-asset/jquery": 0,
-        "machour/yii2-notifications": 20
+        "machour/yii2-notifications": 20,
+        "kucha/ueditor": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
