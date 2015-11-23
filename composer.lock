@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3b51acf266701bc2071a746b8d412b94",
-    "content-hash": "3efc49ed8614440b7e515272c5034bed",
+    "hash": "40e0c9e3d109b36c7dc575b1f6407db4",
+    "content-hash": "287ca61418386b6f4d4a11040fee2921",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -446,7 +446,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/cebe/markdown/54a2c49de31cc44e864ebf0500a35ef21d0010b2.zip",
+                "url": "https://api.github.com/repos/cebe/markdown/zipball/54a2c49de31cc44e864ebf0500a35ef21d0010b2",
                 "reference": "54a2c49de31cc44e864ebf0500a35ef21d0010b2",
                 "shasum": ""
             },
@@ -506,7 +506,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/ezyang/htmlpurifier/6f389f0f25b90d0b495308efcfa073981177f0fd.zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/6f389f0f25b90d0b495308efcfa073981177f0fd",
                 "reference": "6f389f0f25b90d0b495308efcfa073981177f0fd",
                 "shasum": ""
             },
@@ -550,7 +550,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/fzaninotto/Faker/d0190b156bcca848d401fb80f31f504f37141c8d.zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d0190b156bcca848d401fb80f31f504f37141c8d",
                 "reference": "d0190b156bcca848d401fb80f31f504f37141c8d",
                 "shasum": ""
             },
@@ -602,7 +602,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/Gregwar/Captcha/1240ab993ca713680573b2d4166900da5f758623.zip",
+                "url": "https://api.github.com/repos/Gregwar/Captcha/zipball/1240ab993ca713680573b2d4166900da5f758623",
                 "reference": "1240ab993ca713680573b2d4166900da5f758623",
                 "shasum": ""
             },
@@ -639,6 +639,38 @@
                 "spam"
             ],
             "time": "2015-09-11 15:23:20"
+        },
+        {
+            "name": "idarex/pingpp-yii2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/idarex/pingpp-yii2.git",
+                "reference": "6b1fae36a13663f0d3dde74f981f88481fde7860"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://packagist.phpcomposer.com/files/idarex/pingpp-yii2/6b1fae36a13663f0d3dde74f981f88481fde7860.zip",
+                "reference": "6b1fae36a13663f0d3dde74f981f88481fde7860",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "pingplusplus/pingpp-php": "dev-master",
+                "yiisoft/yii2": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "idarex\\pingppyii2\\": "./src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "ping plus plus yii2",
+            "time": "2015-11-18 07:59:29"
         },
         {
             "name": "kucha/ueditor",
@@ -685,7 +717,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/thephpleague/flysystem/31525caf9e8772683672fefd8a1ca0c0736020f4.zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/31525caf9e8772683672fefd8a1ca0c0736020f4",
                 "reference": "31525caf9e8772683672fefd8a1ca0c0736020f4",
                 "shasum": ""
             },
@@ -769,7 +801,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/thephpleague/url/1ae2c3ce29a7c5438339ff6388225844e6479da8.zip",
+                "url": "https://api.github.com/repos/thephpleague/url/zipball/1ae2c3ce29a7c5438339ff6388225844e6479da8",
                 "reference": "1ae2c3ce29a7c5438339ff6388225844e6479da8",
                 "shasum": ""
             },
@@ -823,7 +855,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/machour/yii2-notifications/5f1cd60c633f9fb15061833e74f99063aec00f2c.zip",
+                "url": "https://api.github.com/repos/machour/yii2-notifications/zipball/c0d2c6ba528353b2efba80670e4b68c11371281f",
                 "reference": "5f1cd60c633f9fb15061833e74f99063aec00f2c",
                 "shasum": ""
             },
@@ -859,6 +891,54 @@
             "time": "2015-11-11 23:34:46"
         },
         {
+            "name": "pingplusplus/pingpp-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PingPlusPlus/pingpp-php.git",
+                "reference": "13643158b3b229d67b9bf99665f8d80144307aab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PingPlusPlus/pingpp-php/zipball/13643158b3b229d67b9bf99665f8d80144307aab",
+                "reference": "13643158b3b229d67b9bf99665f8d80144307aab",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": []
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pingpp\\": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pingplusplus and contributors",
+                    "homepage": "https://github.com/PingPlusPlus/pingpp-php/contributors"
+                }
+            ],
+            "description": "Pingplusplus PHP Library",
+            "homepage": "https://pingxx.com/",
+            "keywords": [
+                "api",
+                "mobile payment processing",
+                "pingpp"
+            ],
+            "time": "2015-10-11 15:10:09"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.4.1",
             "source": {
@@ -868,7 +948,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/swiftmailer/swiftmailer/0697e6aa65c83edf97bb0f23d8763f94e3f11421.zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/0697e6aa65c83edf97bb0f23d8763f94e3f11421",
                 "reference": "0697e6aa65c83edf97bb0f23d8763f94e3f11421",
                 "shasum": ""
             },
@@ -921,7 +1001,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/trntv/yii2-file-kit/af5568ec64d4cab07b312d688aa5462d4ef2d31b.zip",
+                "url": "https://api.github.com/repos/trntv/yii2-file-kit/zipball/af5568ec64d4cab07b312d688aa5462d4ef2d31b",
                 "reference": "af5568ec64d4cab07b312d688aa5462d4ef2d31b",
                 "shasum": ""
             },
@@ -971,7 +1051,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/true/php-punycode/b672918d992b84f8016bbe353a42516928393c63.zip",
+                "url": "https://api.github.com/repos/true/php-punycode/zipball/b672918d992b84f8016bbe353a42516928393c63",
                 "reference": "b672918d992b84f8016bbe353a42516928393c63",
                 "shasum": ""
             },
@@ -1017,7 +1097,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-framework/f42b2eb80f61992438661b01d0d74c6738e2ff38.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/f42b2eb80f61992438661b01d0d74c6738e2ff38",
                 "reference": "f42b2eb80f61992438661b01d0d74c6738e2ff38",
                 "shasum": ""
             },
@@ -1105,7 +1185,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-bootstrap/1464f93834b1d5edb1f5625f7ffd6c3723fa4923.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/1464f93834b1d5edb1f5625f7ffd6c3723fa4923",
                 "reference": "1464f93834b1d5edb1f5625f7ffd6c3723fa4923",
                 "shasum": ""
             },
@@ -1155,7 +1235,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-composer/ca8d23707ae47d20b0454e4b135c156f6da6d7be.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/ca8d23707ae47d20b0454e4b135c156f6da6d7be",
                 "reference": "ca8d23707ae47d20b0454e4b135c156f6da6d7be",
                 "shasum": ""
             },
@@ -1202,7 +1282,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-faker/b88ca69ee226a3610b2c26c026c3203d7ac50f6c.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
                 "reference": "b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
                 "shasum": ""
             },
@@ -1249,7 +1329,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-jui/ce16f29cca654702c2ee500ccad9657a2d2e6a09.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-jui/zipball/ce16f29cca654702c2ee500ccad9657a2d2e6a09",
                 "reference": "ce16f29cca654702c2ee500ccad9657a2d2e6a09",
                 "shasum": ""
             },
@@ -1299,7 +1379,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-swiftmailer/4ec435a89e30b203cea99770910fb5499cb3627a.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/4ec435a89e30b203cea99770910fb5499cb3627a",
                 "reference": "4ec435a89e30b203cea99770910fb5499cb3627a",
                 "shasum": ""
             },
@@ -1349,7 +1429,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yzalis/Identicon/a99fc2a3d018512f7914bc6f972952536c0f309b.zip",
+                "url": "https://api.github.com/repos/yzalis/Identicon/zipball/a99fc2a3d018512f7914bc6f972952536c0f309b",
                 "reference": "a99fc2a3d018512f7914bc6f972952536c0f309b",
                 "shasum": ""
             },
@@ -1399,7 +1479,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/zhuzhichao/ip-location-zh/2060bad9e097d5ec4c53378836f4a5264add6dd3.zip",
+                "url": "https://api.github.com/repos/zhuzhichao/ip-location-zh/zipball/2060bad9e097d5ec4c53378836f4a5264add6dd3",
                 "reference": "2060bad9e097d5ec4c53378836f4a5264add6dd3",
                 "shasum": ""
             },
@@ -1540,7 +1620,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/phpspec/php-diff/30e103d19519fe678ae64a60d77884ef3d71b28a.zip",
+                "url": "https://api.github.com/repos/phpspec/php-diff/zipball/30e103d19519fe678ae64a60d77884ef3d71b28a",
                 "reference": "30e103d19519fe678ae64a60d77884ef3d71b28a",
                 "shasum": ""
             },
@@ -1574,7 +1654,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-codeception/de5007e7a99359597abbfe1c88dca3ce620061c5.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/de5007e7a99359597abbfe1c88dca3ce620061c5",
                 "reference": "de5007e7a99359597abbfe1c88dca3ce620061c5",
                 "shasum": ""
             },
@@ -1619,7 +1699,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-debug/1b302e67521d46feb2413d9d96ca94ed82b39b0e.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/1b302e67521d46feb2413d9d96ca94ed82b39b0e",
                 "reference": "1b302e67521d46feb2413d9d96ca94ed82b39b0e",
                 "shasum": ""
             },
@@ -1666,7 +1746,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/yiisoft/yii2-gii/e5a023e8779bd774194842ec1b8fb4917cf04007.zip",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/e5a023e8779bd774194842ec1b8fb4917cf04007",
                 "reference": "e5a023e8779bd774194842ec1b8fb4917cf04007",
                 "shasum": ""
             },
@@ -1711,11 +1791,12 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "bower-asset/jquery": 0,
         "machour/yii2-notifications": 20,
-        "kucha/ueditor": 20
+        "kucha/ueditor": 20,
+        "idarex/pingpp-yii2": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
