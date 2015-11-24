@@ -22,5 +22,13 @@ return [
                 ],
             ],
         ],
+        'fileStorage'=>[
+            'class' => 'trntv\filekit\Storage',
+            'baseUrl' => '@uploadweb',
+            'filesystem'=> [
+                'class' => 'common\components\LocalFlysystemBuilder',
+                'path' => '@uploadwebroot',
+            ],
+        ],
     ],
 ];

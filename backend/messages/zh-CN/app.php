@@ -17,6 +17,7 @@ return [
     'Category ID' => '分类',
     'Create {modelClass}: ' => '添加 {modelClass}: ',
     'Update {modelClass}: ' => '修改 {modelClass}: ',
+    'Description' => '描述',
     
     // user
     'Email' => '邮箱',
@@ -30,9 +31,9 @@ return [
     'Product Category Name' => '产品分类名',
     
     // product_attribute_category
+    'Create Product Attribute Category' => '添加产品属性分类',
     'Product Attribute Categories' => '产品属性分类',
     'Product Attribute Category' => '产品属性分类',
-    'Create Product Attribute Category' => '添加产品属性分类',
     
     // product_attribute
     'Product Attributes' => '产品属性',
@@ -40,4 +41,27 @@ return [
     'Create Product Attribute' => '添加产品属性',
     'Product Attribute Type' => '属性类型',
     'Product Attribute Option' => '属性可选项',
+    
+    // product
+    'Product' => '产品',
+    'Products' => '产品',
+    'Create Product' => '添加产品',
+    'Inventory' => '库存',
+    'Logo' => '封面',
+    'Our Price' => '本店价格',
+    'Market Price' => '市场价格',
+    'Promotion Price' => '促销价',
+    'Promotion Start Time' => '促销开始时间',
+    'Promotion End Time' => '促销结束时间',
+    'Is New' => '新品',
+    'Is Hot' => '热卖',
+    'Is Best' => '推荐',
+    'Score' => '赠送积分',
+    'Product Pictures' => '产品图片',
+    
+    // uploadKit
+    'Maximum number of files exceeded' => '超过最大上传文件数',
+    'File type not allowed' => '不允许的文件类型',
+    'File is too large' => '文件太大',
+    'File is too small' => '文件太小',
 ];

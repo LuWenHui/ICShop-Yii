@@ -2,6 +2,7 @@
 
 namespace common\components;
 
+use Yii;
 use yii\helpers\ArrayHelper;
 
 class ActiveRecord extends \yii\db\ActiveRecord {
@@ -43,5 +44,12 @@ class ActiveRecord extends \yii\db\ActiveRecord {
     
     public function getStatusLabel() {
         return ArrayHelper::getValue(static::getStatusLabels(), $this->status);
+    }
+    
+    public static function findOrCreate($conditions = []) {
+        if (!$model = static::findOne($conditions)) {
+            $model = Yii::createObject(static::className());
+        }
+        return $model;
     }
 }

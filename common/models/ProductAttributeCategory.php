@@ -15,7 +15,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $status
  */
 class ProductAttributeCategory extends \common\components\ActiveRecord
-{
+{   
     public function behaviors() {
         return [
             TimestampBehavior::className(),
@@ -56,6 +56,10 @@ class ProductAttributeCategory extends \common\components\ActiveRecord
             'updated_at' => Yii::t('app', 'Updated At'),
             'status' => Yii::t('app', 'Status'),
         ];
+    }
+    
+    public function getSubAttributes() {
+        return $this->hasMany(ProductAttribute::className(), ['category_id' => 'id']);
     }
     
     public static function getList($refresh = false) {

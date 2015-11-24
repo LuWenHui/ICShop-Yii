@@ -20,6 +20,7 @@ use yii\behaviors\TimestampBehavior;
  */
 class ProductAttribute extends \common\components\ActiveRecord
 {
+    const SEPARATOER = ',';
     const TYPE_UNIQUE = 1;
     const TYPE_MULTIPLE = 2;
     
@@ -68,6 +69,22 @@ class ProductAttribute extends \common\components\ActiveRecord
     
     public function getCategory() {
         return $this->hasOne(ProductAttributeCategory::className(), ['id' => 'category_id']);
+    }
+    
+    public function getOptoinIdNames() {
+        $optionsIdNames = [];
+        foreach(explode(self::SEPARATOER, $this->option) as $option) {
+            $optionsIdNames[$option] = $option;
+        }
+        return $optionsIdNames;
+    }
+    
+    public function getIsUnique() {
+        return $this->type == self::TYPE_UNIQUE;
+    }
+    
+    public function getIsMultiple() {
+        return $this->type == self::TYPE_MULTIPLE;
     }
     
     public function getTypeLabel() {

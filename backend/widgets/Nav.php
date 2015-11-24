@@ -235,7 +235,7 @@ HTML;
     }
     
     protected function renderDropdownItems($items, $parentItem, $html = '') {
-        $html .= '<ul class="nav">';
+        $html .= '<ul class="nav dk">';
         foreach($items as $item) {
             if (is_array($item) && isset($item['items'])) {
                 // Todo: 待实现
