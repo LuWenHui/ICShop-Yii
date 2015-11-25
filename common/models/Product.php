@@ -172,6 +172,6 @@ class Product extends \common\components\ActiveRecord
     }
     
     public function getLogoAccessUrl() {
-        return $this->logo ? Yii::getAlias('@uploadweb') . '/' . $this->logo : '';
+        return $this->logo ? Yii::$app->params['uploadweb'] . '/' . $this->logo : '';
     }
 }

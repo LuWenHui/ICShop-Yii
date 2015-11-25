@@ -31,7 +31,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'name',
             'inventory',
-            'description:ntext',
             [
                 'attribute' => 'logo',
                 'format' => ['image', ['width' => '50px']],

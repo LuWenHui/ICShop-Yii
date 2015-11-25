@@ -9,7 +9,7 @@ use common\models\ProductAttributeCategory;
 use common\models\ProductAttribute;
 use yii\jui\DatePicker;
 use trntv\filekit\widget\Upload;
-use kucha\ueditor\UEditor;
+use xj\ueditor\Ueditor;
 use yii\helpers\Url;
 
 /* @var $this yii\web\View */
@@ -77,26 +77,14 @@ use yii\helpers\Url;
                 <?= $form->field($model, 'display_order')->textInput() ?>
             </div>
             <div class="tab-pane" id="description">
-                <?= $form->field($model, 'description')->widget(UEditor::className(), [
-                    'clientOptions' => [
-                        'serverUrl' => Url::to(['product/ueditor-upload']),
-                        //编辑区域大小
-                        'initialFrameHeight' => '200',
-                        //设置语言
-                        'lang' =>'zh-cn', //中文为 zh-cn
-                        //定制菜单
-                        'toolbars' => [
-                            [
-                                'fullscreen', 'source', 'undo', 'redo', '|',
-                                'fontsize',
-                                'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'removeformat',
-                                'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|',
-                                'forecolor', 'backcolor', '|',
-                                'lineheight', '|',
-                                'indent', '|',
-                                'insertimage', 'imagenone', 'imageleft', 'imageright', 'imagecenter',
-                            ],
-                        ],
+                <?= $form->field($model, 'description')->widget(Ueditor::className(), [
+                    'style' => 'width:100%;height:400px',
+                    'renderTag' => true,
+                    'readyEvent' => 'console.log("example2 ready")',
+                    'jsOptions' => [
+                        'serverUrl' => Url::to(['ueditor-upload']),
+                        'autoHeightEnable' => true,
+                        'autoFloatEnable' => true
                     ],
                 ]) ?>
             </div>

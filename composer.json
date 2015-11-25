@@ -30,7 +30,6 @@
         "yiisoft/yii2-jui": "~2.0.0",
         "machour/yii2-notifications": "@dev",
         "trntv/yii2-file-kit": "^1.1",
-        "kucha/ueditor": "dev-master",
         "idarex/pingpp-yii2": "dev-master",
         "xj/yii2-ueditor-widget": "~1.0.0"
     },

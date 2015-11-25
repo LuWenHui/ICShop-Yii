@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6d5a06e03a1d3d05946a3632de2da7a6",
-    "content-hash": "5b8da016b4181355ee536710b18b7e94",
+    "hash": "5782eb2b8753bf1d747bf2f6f9b1178d",
+    "content-hash": "9c063aee8019795d94afbe0326100233",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -671,41 +671,6 @@
             ],
             "description": "ping plus plus yii2",
             "time": "2015-11-18 07:59:29"
-        },
-        {
-            "name": "kucha/ueditor",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHP-ITcast/yii2-ueditor-widget.git",
-                "reference": "ee23f3529a4cd98e0285a07ecad6c603e695fa72"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHP-ITcast/yii2-ueditor-widget/zipball/ee23f3529a4cd98e0285a07ecad6c603e695fa72",
-                "reference": "ee23f3529a4cd98e0285a07ecad6c603e695fa72",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "kucha\\ueditor\\": ""
-                }
-            },
-            "license": [
-                "null"
-            ],
-            "authors": [
-                {
-                    "name": "BigKuCha",
-                    "email": "nevermore1989@vip.qq.com"
-                }
-            ],
-            "description": "desc",
-            "support": {
-                "source": "https://github.com/PHP-ITcast/yii2-ueditor-widget/tree/master"
-            },
-            "time": "2015-11-17 09:47:56"
         },
         {
             "name": "league/flysystem",
@@ -1831,7 +1796,6 @@
     "stability-flags": {
         "bower-asset/jquery": 0,
         "machour/yii2-notifications": 20,
-        "kucha/ueditor": 20,
         "idarex/pingpp-yii2": 20
     },
     "prefer-stable": false,

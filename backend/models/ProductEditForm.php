@@ -134,7 +134,7 @@ class ProductEditForm extends Model {
             $this->description = $product->description;
             if ($product->logo) {
                 $this->logo = [
-                    'base_url' => Yii::getAlias('@uploadweb'),
+                    'base_url' => Yii::$app->params['uploadweb'],
                     'path' => $product->logo,
                 ];
             }
@@ -152,7 +152,7 @@ class ProductEditForm extends Model {
             if ($product->pictures) {
                 foreach($product->pictures as $productPicture) {
                     $this->pictures[] = [
-                        'base_url' => Yii::getAlias('@uploadweb'),
+                        'base_url' => Yii::$app->params['uploadweb'],
                         'path' => $productPicture->value,
                     ];
                 }
