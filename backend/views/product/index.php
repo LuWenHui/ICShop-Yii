@@ -35,10 +35,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'logo',
                 'format' => ['image', ['width' => '50px']],
                 'value' => 'logoAccessUrl',
+                'filter' => false,
             ],
-            'our_price',
-            'market_price',
-            'promotion_price',
+            [
+                'attribute' => 'our_price',
+                'filter' => false,
+            ],
+            [
+                'attribute' => 'market_price',
+                'filter' => false,
+            ],
+            [
+                'attribute' => 'promotion_price',
+                'filter' => false,
+            ],
             'promotion_start_time:datetime',
             'promotion_end_time:datetime',
             [
@@ -53,7 +63,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'is_best',
                 'value' => 'isBestLabel',
             ],
-            'display_order',
+            [
+                'attribute' => 'display_order',
+                'filter' => false,
+            ],
             'score',
             [
                 'attribute' => 'status',
