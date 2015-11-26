@@ -8,7 +8,7 @@ class m151126_063437_add_icon_class_to_product_category extends Migration
 {
     public function up()
     {
-        $this->addColumn(ProductCategory::tableName(), 'icon_class', $this->string(32));
+        $this->addColumn(ProductCategory::tableName(), 'icon_class', $this->string(32)->notNull()->defaultValue(''));
     }
 
     public function down()
