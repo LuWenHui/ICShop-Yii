@@ -18,6 +18,7 @@ return [
     'Create {modelClass}: ' => '添加 {modelClass}: ',
     'Update {modelClass}: ' => '修改 {modelClass}: ',
     'Description' => '描述',
+    'Icon Class' => '图标类名',
     
     // user
     'Email' => '邮箱',

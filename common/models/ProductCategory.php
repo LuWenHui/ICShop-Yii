@@ -24,7 +24,7 @@ class ProductCategory extends ActiveRecord {
             ['parent_id', 'number', 'integerOnly' => true],
             ['parent_id', 'default', 'value' => 0],
             [['name', 'status'], 'required'],
-            [['name', 'slug'], 'string'],
+            [['name', 'slug', 'icon_class'], 'string'],
         ];
     }
     
@@ -34,6 +34,7 @@ class ProductCategory extends ActiveRecord {
             'name' => Yii::t('app', 'Product Category Name'),
             'parent_id' => Yii::t('app', 'Product Category Parent'),
             'slug' => Yii::t('app', 'Slug'),
+            'icon_class' => Yii::t('app', 'Icon Class'),
             'display_order' => Yii::t('app', 'Display Order'),
             'status' => Yii::t('app', 'Status'),
             'created_at' => Yii::t('app', 'Created At'),
