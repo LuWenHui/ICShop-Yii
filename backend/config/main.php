@@ -20,6 +20,11 @@ return [
             'enableAutoLogin' => true,
             'loginUrl' => ['user/login'],
         ],
+        'pingpp' => [
+            'class' => '\idarex\pingppyii2\PingppComponent',
+            'apiKey' => 'sk_test_9K048G1urnfTPenrT4erjTK0',
+            'appId' => 'app_vvXjHCiTiPSGifjr',
+        ],
         'assetManager' => [
             'bundles' => [
             ],

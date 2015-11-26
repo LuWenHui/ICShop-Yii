@@ -17,5 +17,8 @@ var jp_config = {
         '/js/components/bootstrap-tokenfield/css/bootstrap-tokenfield.css',
         '/js/components/typeahead.js/typeahead.bundle.min.js',
         '/js/components/bootstrap-tokenfield/bootstrap-tokenfield.js'
+    ],
+    'pingpp-pc': [
+        '/js/components/pingpp-html5/pingpp-pc.js'
     ]
 };
