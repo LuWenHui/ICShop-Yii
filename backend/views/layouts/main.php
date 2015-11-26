@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use backend\assets\AppAsset;
+use machour\yii2\notifications\widgets\NotificationsWidget;
 
 AppAsset::register($this);
 
@@ -12,6 +13,7 @@ $this->context->layout = false;
     <head>
         <meta charset="<?= Yii::$app->charset ?>" />
         <title><?= $this->title ?></title>
+		<link rel="shortcut icon" type="image/x-icon" href="/fevicon.png">
         <meta name="description" content="<?= $this->title ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <?= Html::csrfMetaTags() ?>
@@ -46,6 +48,9 @@ $this->context->layout = false;
                 </section>
             </section>
         </section>
+        <?= NotificationsWidget::widget([
+            'theme' => NotificationsWidget::THEME_GROWL,
+        ]) ?>
         <?php $this->endBody() ?>
     </body>
 </html>

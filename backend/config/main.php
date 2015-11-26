@@ -13,7 +13,15 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'defaultRoute' => 'dashboard/index',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'notifications' => [
+            'class' => 'machour\yii2\notifications\NotificationsModule',
+            'notificationClass' => 'backend\models\Notification',
+            'userId' => function() {
+                return \Yii::$app->user->identity->id;
+            }
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\AdminUser',
