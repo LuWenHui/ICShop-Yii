@@ -11,12 +11,6 @@
         "contact": "http://php.itcast.cn/"
     },
     "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/PHP-ITcast/yii2-ueditor-widget"
-        }
-    ],
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6",

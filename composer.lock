@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5782eb2b8753bf1d747bf2f6f9b1178d",
-    "content-hash": "9c063aee8019795d94afbe0326100233",
+    "hash": "ac9c30b35b18f70b47fa0fb89e83473f",
+    "content-hash": "7949cc002683e66c681889a49eb0dfaf",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -646,18 +646,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/idarex/pingpp-yii2.git",
-                "reference": "6b1fae36a13663f0d3dde74f981f88481fde7860"
+                "reference": "a727071d9bb1357cdbe3eaee6bcf6556801b61c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/idarex/pingpp-yii2/6b1fae36a13663f0d3dde74f981f88481fde7860.zip",
-                "reference": "6b1fae36a13663f0d3dde74f981f88481fde7860",
+                "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
+                "reference": "a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
                 "pingplusplus/pingpp-php": "dev-master",
                 "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
             },
             "type": "library",
             "autoload": {
@@ -670,7 +673,7 @@
                 "MIT"
             ],
             "description": "ping plus plus yii2",
-            "time": "2015-11-18 07:59:29"
+            "time": "2015-11-23 07:35:05"
         },
         {
             "name": "league/flysystem",
@@ -1062,7 +1065,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/xjflyttp/yii2-ueditor-widget/39e9c09ceb88093850ab2a0ff84c458fab024523.zip",
+                "url": "https://api.github.com/repos/xjflyttp/yii2-ueditor-widget/zipball/39e9c09ceb88093850ab2a0ff84c458fab024523",
                 "reference": "39e9c09ceb88093850ab2a0ff84c458fab024523",
                 "shasum": ""
             },
