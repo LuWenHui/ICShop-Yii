@@ -13,7 +13,11 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'defaultRoute' => 'dashboard/index',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'modules' => [
+        'mimin' => [
+            'class' => '\hscstudio\mimin\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\AdminUser',
@@ -38,4 +42,14 @@ return [
         ],
     ],
     'params' => $params,
+    
+    'as access' => [
+        'class' => '\hscstudio\mimin\components\AccessControl',
+        'allowActions' => [
+            // add wildcard allowed action here!
+            'site/*',
+            'debug/*',
+            'mimin/*', // only in dev mode
+        ],
+    ],
 ];
