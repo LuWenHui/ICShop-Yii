@@ -46,6 +46,18 @@ class ProductCategory extends ActiveRecord {
         return $this->hasOne(static::className(), ['id' => 'parent_id']);
     }
     
+    public function getChildrens() {
+        return $this->hasMany(static::className(), ['id' => 'parent_id']);
+    }
+    
+    public function getTop() {
+        return static::softFind()->andWhere(['parent_id' => 0]);
+    }
+    
+    public function getIsTop() {
+        return $this->parent_id == 0;
+    }
+    
     public static function getTreeIdNameList($refresh = false) {
         static $_treeList;
         if (!isset($_treeList) || $refresh) {
