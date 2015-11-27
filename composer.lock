@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac9c30b35b18f70b47fa0fb89e83473f",
-    "content-hash": "7949cc002683e66c681889a49eb0dfaf",
+    "hash": "57fea98472591205835e0fc1970000e9",
+    "content-hash": "88823e4b7bf01686a9ee5a93758172b6",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -650,7 +650,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
+                "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/e53477197accedcf0eeb1f2a9f07cd52f36821ed",
                 "reference": "a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
                 "shasum": ""
             },
@@ -857,6 +857,57 @@
                 "yii"
             ],
             "time": "2015-11-11 23:34:46"
+        },
+        {
+            "name": "mdmsoft/yii2-admin",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mdmsoft/yii2-admin.git",
+                "reference": "99f828c8cc70602a5c9a7abc67591fdd6dfda889"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mdmsoft/yii2-admin/zipball/99f828c8cc70602a5c9a7abc67591fdd6dfda889",
+                "reference": "99f828c8cc70602a5c9a7abc67591fdd6dfda889",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.4"
+            },
+            "suggest": {
+                "yiisoft/yii2-bootstrap": "Used when using layout 'left-menu', 'right-menu' or 'top-menu'"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.0.master": "1.0.x-dev",
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "mdm\\admin\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Misbahul Munir",
+                    "email": "misbahuldmunir@gmail.com"
+                }
+            ],
+            "description": "RBAC Auth manager for Yii2 ",
+            "keywords": [
+                "admin",
+                "auth",
+                "rbac",
+                "yii"
+            ],
+            "time": "2015-10-06 02:49:00"
         },
         {
             "name": "pingplusplus/pingpp-php",
