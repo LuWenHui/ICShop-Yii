@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac9c30b35b18f70b47fa0fb89e83473f",
-    "content-hash": "7949cc002683e66c681889a49eb0dfaf",
+    "hash": "988605a37ce493fda5200bca0ff7dfd8",
+    "content-hash": "1b0c7e1dff49eabad84d0e14ed994331",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -252,6 +252,68 @@
                 "mobile-first",
                 "responsive",
                 "web"
+            ]
+        },
+        {
+            "name": "bower-asset/free-jqgrid",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/free-jqgrid/jqGrid.git",
+                "reference": "179818384bb24ea55e3d7159b21ef234652dafca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/free-jqgrid/jqGrid/zipball/179818384bb24ea55e3d7159b21ef234652dafca",
+                "reference": "179818384bb24ea55e3d7159b21ef234652dafca",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7.2"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": [
+                    "js/jquery.jqgrid.min.js",
+                    "js/jquery.jqgrid.src.js",
+                    "js/jquery.jqgrid.min.map",
+                    "css/ui.jqgrid.css",
+                    "css/ui.jqgrid.min.css",
+                    "css/ui.jqgrid.min.css.map"
+                ],
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests",
+                    "gradlew.bat",
+                    "gradle/wrapper",
+                    ".gradle",
+                    "gradlew"
+                ],
+                "branch-alias": {
+                    "dev-master": "4.11.0-dev"
+                }
+            },
+            "license": [
+                "MIT",
+                "GPL-2.0"
+            ],
+            "description": "grid as jQuery plugin - fork of jqGrid before licensing change",
+            "keywords": [
+                "Subgrid",
+                "TreeGrid",
+                "editing",
+                "grid",
+                "grid",
+                "grouping",
+                "jQuery",
+                "jqGrid",
+                "paging",
+                "searching",
+                "sorting",
+                "table"
             ]
         },
         {
@@ -641,6 +703,51 @@
             "time": "2015-09-11 15:23:20"
         },
         {
+            "name": "himiklab/yii2-jqgrid-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/himiklab/yii2-jqgrid-widget.git",
+                "reference": "a8db666a50302afd9c9c691de8f58d0c72c3c0b5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/himiklab/yii2-jqgrid-widget/zipball/a8db666a50302afd9c9c691de8f58d0c72c3c0b5",
+                "reference": "a8db666a50302afd9c9c691de8f58d0c72c3c0b5",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/free-jqgrid": "*",
+                "yiisoft/yii2": "*",
+                "yiisoft/yii2-jui": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "himiklab\\jqgrid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "HimikLab",
+                    "homepage": "https://github.com/himiklab"
+                }
+            ],
+            "description": "A powerful ajax-enabled grid widget for Yii2",
+            "keywords": [
+                "ajax",
+                "grid",
+                "jqgrid",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-12-01 14:24:28"
+        },
+        {
             "name": "idarex/pingpp-yii2",
             "version": "dev-master",
             "source": {
@@ -650,7 +757,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
+                "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/4295685004d979af51c815cb601c53999222a464",
                 "reference": "a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
                 "shasum": ""
             },
