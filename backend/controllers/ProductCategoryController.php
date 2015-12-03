@@ -8,6 +8,7 @@ use yii\web\NotFoundHttpException;
 use common\models\ProductCategory;
 use backend\models\ProductCategorySearch;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 
 class ProductCategoryController extends Controller {
     public function behaviors() {
@@ -16,7 +17,7 @@ class ProductCategoryController extends Controller {
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'view', 'create', 'update', 'delete'],
+                        'actions' => ['index', 'view', 'create', 'update', 'delete', 'delete-multiple'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -55,6 +56,13 @@ class ProductCategoryController extends Controller {
     public function actionDelete($id) {
         $this->findModel($id)->softDelete($id);
         return $this->redirect('index');
+    }
+    
+    public function actionDeleteMultiple() {
+        foreach(ArrayHelper::getValue(Yii::$app->request->post(), 'ids', []) as $id) {
+            $this->findModel($id)->softDelete();
+        }
+        return $this->redirect(Yii::$app->request->referrer);
     }
     
     protected function findModel($id) {

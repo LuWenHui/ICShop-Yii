@@ -11,6 +11,12 @@
         "contact": "http://php.itcast.cn/"
     },
     "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/su-xiaolin/yii2-actionbar"
+        }
+    ],
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": ">=2.0.6",
@@ -26,7 +32,8 @@
         "trntv/yii2-file-kit": "^1.1",
         "idarex/pingpp-yii2": "dev-master",
         "xj/yii2-ueditor-widget": "~1.0.0",
-        "nterms/yii2-pagesize-widget": "*"
+        "nterms/yii2-pagesize-widget": "*",
+        "mickgeek/yii2-actionbar": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

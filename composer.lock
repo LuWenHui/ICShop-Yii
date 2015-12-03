@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "25e91f575851329080c80892e49db601",
-    "content-hash": "0f20c4eb97faf044d0014f68e55e1054",
+    "hash": "e746190519035a980e161f1a4d3f21de",
+    "content-hash": "bd2f1f8b3546bc348f901424ccbc2dc5",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -857,6 +857,55 @@
                 "yii"
             ],
             "time": "2015-11-11 23:34:46"
+        },
+        {
+            "name": "mickgeek/yii2-actionbar",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/su-xiaolin/yii2-actionbar.git",
+                "reference": "72befa6c87e794e54854d7c7594d4aaf74de05a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/su-xiaolin/yii2-actionbar/zipball/72befa6c87e794e54854d7c7594d4aaf74de05a7",
+                "reference": "72befa6c87e794e54854d7c7594d4aaf74de05a7",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "mickgeek\\actionbar\\": ""
+                }
+            },
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Oleg Belostotskiy",
+                    "email": "olgblst@gmail.com",
+                    "homepage": "http://mickgeek.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Customizable bar with the drop-down list for manipulation selected GridView items and control buttons.",
+            "homepage": "https://github.com/mickgeek/yii2-actionbar",
+            "keywords": [
+                "bulk actions",
+                "dropdown",
+                "extension",
+                "grid",
+                "widget",
+                "yii2"
+            ],
+            "support": {
+                "source": "https://github.com/su-xiaolin/yii2-actionbar/tree/master"
+            },
+            "time": "2015-12-03 09:04:37"
         },
         {
             "name": "nterms/yii2-pagesize-widget",
@@ -1844,7 +1893,8 @@
     "stability-flags": {
         "bower-asset/jquery": 0,
         "machour/yii2-notifications": 20,
-        "idarex/pingpp-yii2": 20
+        "idarex/pingpp-yii2": 20,
+        "mickgeek/yii2-actionbar": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
