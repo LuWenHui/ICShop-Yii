@@ -17,7 +17,7 @@ $this->context->layout = false;
         <?= Html::csrfMetaTags() ?>
         <?= $this->head() ?>
     </head>
-    <body class="">
+    <body class="container">
         <?php $this->beginBody() ?>
         <section class="vbox">
             <!-- .header -->
