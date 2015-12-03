@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac9c30b35b18f70b47fa0fb89e83473f",
-    "content-hash": "7949cc002683e66c681889a49eb0dfaf",
+    "hash": "25e91f575851329080c80892e49db601",
+    "content-hash": "0f20c4eb97faf044d0014f68e55e1054",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -650,7 +650,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
+                "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/4295685004d979af51c815cb601c53999222a464",
                 "reference": "a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
                 "shasum": ""
             },
@@ -857,6 +857,51 @@
                 "yii"
             ],
             "time": "2015-11-11 23:34:46"
+        },
+        {
+            "name": "nterms/yii2-pagesize-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nterms/yii2-pagesize-widget.git",
+                "reference": "ccb2147379deeb79533e73d0ecd4a275b4ddf5b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nterms/yii2-pagesize-widget/zipball/ccb2147379deeb79533e73d0ecd4a275b4ddf5b4",
+                "reference": "ccb2147379deeb79533e73d0ecd4a275b4ddf5b4",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "nterms\\pagesize\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saranga Abeykoon",
+                    "email": "amisaranga@gmail.com",
+                    "homepage": "http://nterms.com/"
+                }
+            ],
+            "description": "Widget for enabling dynamic page size selection on GridView",
+            "homepage": "https://github.com/nterms/yii2-pagesize-widget",
+            "keywords": [
+                "extension",
+                "grid-view",
+                "page-size",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-11-26 14:45:39"
         },
         {
             "name": "pingplusplus/pingpp-php",

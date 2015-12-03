@@ -25,6 +25,9 @@ class ProductCategorySearch extends ProductCategory {
         
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pageSizeLimit' => [1, 500],
+            ],
         ]);
         
         //$query->orderBy(['updated_at' => SORT_DESC, 'display_order' => SORT_DESC]);
