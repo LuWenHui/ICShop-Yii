@@ -39,7 +39,7 @@ use yii\helpers\StringHelper;
                         'url' => ['product-category/index'],
                     ],
                     [
-                        'label' => '添加列表',
+                        'label' => '添加分类',
                         'icon' => 'i i-dot icon',
                         'url' => ['product-category/create'],
                     ],

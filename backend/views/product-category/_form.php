@@ -1,27 +1,26 @@
 <?php
 
-use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 use common\models\ProductCategory;
 
 ?>
 <div class="row">
     <?php $form = ActiveForm::begin([
         'method' => 'post',
+        'layout' => 'horizontal',
     ]) ?>
-        <div class="col-md-8">
             <?= $form->field($model, 'name')->textInput() ?>
+            <?= $form->field($model, 'icon_class')->textInput() ?>s
             <?= $form->field($model, 'parent_id')->dropDownList(ProductCategory::getTreeIdNameList(), [
                 'class' => 'form-control chosen-select',
             ]) ?>
             <?= $form->field($model, 'display_order')->textInput() ?>
-            
-            <div class="col-md-12">
-                <button class="btn btn-primary pull-right col-md-4">提交</button>
+        
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-6">
+                <button class="btn btn-primary pull-right btn-block">提交</button>
             </div>
         </div>
-        <div class="col-md-4">
-            <?= $form->field($model, 'icon_class')->textInput() ?>
-        </div>    
     <?php ActiveForm::end() ?>
 </div>
 

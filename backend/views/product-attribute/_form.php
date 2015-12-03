@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 use common\components\ActiveRecord;
 use common\models\ProductAttribute;
 use common\models\ProductAttributeCategory;
@@ -14,7 +14,9 @@ use common\models\ProductAttributeCategory;
 
 <div class="product-attribute-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'layout' => 'horizontal',
+    ]); ?>
 
     <?= $form->field($model, 'category_id')->dropDownList(ArrayHelper::map(ProductAttributeCategory::getList(), 'id', 'name')) ?>
 
@@ -25,9 +27,11 @@ use common\models\ProductAttributeCategory;
     <?= $form->field($model, 'option')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'status')->dropDownList(ActiveRecord::getStatusLabels()) ?>
-
+    
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <div class="col-sm-offset-3 col-sm-6">
+            <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-block btn-success' : 'btn btn-block btn-primary']) ?>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>

@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-use yii\widgets\ActiveForm;
+use yii\bootstrap\ActiveForm;
 use common\models\Product;
 use common\models\ProductCategory;
 use common\models\ProductAttributeCategory;
@@ -18,7 +18,9 @@ use yii\helpers\Url;
 ?>
 
 <div class="product-form">
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin([
+        'layout' => 'horizontal',
+    ]); ?>
     <section class="panel panel-default">
         <header class="panel-heading bg-light">
             <ul class="nav nav-tabs pull-right">
@@ -102,9 +104,12 @@ use yii\helpers\Url;
             </div>
             </div>
         </div>
+        
+        <div class="form-group">
+            <div class="col-sm-6 col-sm-offset-3">
+                <?= Html::submitButton($model->product->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->product->isNewRecord ? 'btn btn-success btn-block' : 'btn btn-primary btn-block']) ?>
+            </div>
+        </div>
     </section>
-    <div class="form-group">
-        <?= Html::submitButton($model->product->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->product->isNewRecord ? 'btn btn-success btn-block' : 'btn btn-primary btn-block']) ?>
-    </div>
     <?php ActiveForm::end(); ?>
 </div>
