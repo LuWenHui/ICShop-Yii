@@ -91,6 +91,33 @@ use yii\helpers\Url;
                 ]) ?>
             </div>
             <div class="tab-pane" id="picture">
+                <style type='text/css'>
+                    .upload-kit .upload-kit-item {
+                        height: 50px;
+                        border: none;
+                        border-radius: 0;
+                    }
+                    
+                    .upload-kit .upload-kit-item.image > img {
+                        border-radius: 0;
+                    }
+                    
+                    
+                    .upload-kit .upload-kit-input {
+                        height: 50px;
+                        width: 50px;
+                    }
+                    
+                    .upload-kit .upload-kit-item .remove {
+                        font-size: 2em;
+                        top: 35%;
+                        left: 60%;
+                        width: 40px;
+                        height: 40px;
+                        line-height: 33px;
+                        background-color: rgba(73, 112, 255, 0.8);
+                    }
+                </style>
                 <?= $form->field($model, 'pictures')->widget(
                     Upload::className(),
                     [
