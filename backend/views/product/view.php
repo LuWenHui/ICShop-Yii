@@ -43,8 +43,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'our_price',
             'market_price',
             'promotion_price',
-            'promotion_start_time:datetime',
-            'promotion_end_time:datetime',
+            [
+                'attribute' => 'promotion_start_time',
+                'value' => $model->promotion_start_time ? Yii::$app->formatter->asDatetime($model->promotion_start_time) : '',
+            ],
+            [
+                'attribute' => 'promotion_end_time',
+                'value' => $model->promotion_end_time ? Yii::$app->formatter->asDatetime($model->promotion_end_time) : '',
+            ],
             [
                 'attribute' => 'is_new',
                 'value' => ArrayHelper::getValue($model, 'isNewLabel'),

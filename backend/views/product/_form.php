@@ -36,8 +36,8 @@ use yii\helpers\Url;
                 <?= $form->field($model, 'category_id')->dropDownList(ProductCategory::getTreeIdNameList(), ['class' => ['class' => 'chosen-select form-control']]) ?>
             
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-            
-                <?= $form->field($model, 'inventory')->textInput() ?>
+                
+                <?= $form->field($model, 'inventory')->input('number') ?>
             
                 <?= $form->field($model, 'logo')->widget(
                     Upload::className(),

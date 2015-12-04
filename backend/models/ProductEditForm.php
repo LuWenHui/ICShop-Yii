@@ -102,13 +102,15 @@ class ProductEditForm extends Model {
                 return false;
             }
             ProductPicture::deleteAll(['product_id' => $this->product->id]);
-            foreach($this->pictures as $picture) {
-                $productPicture = Yii::createObject(ProductPicture::className());
-                $productPicture->attributes = [
-                    'product_id' => $this->product->id,
-                    'value' => ArrayHelper::getValue($picture, 'path'),
-                ];
-                $productPicture->save();
+            if ($this->pictures) {
+                foreach($this->pictures as $picture) {
+                    $productPicture = Yii::createObject(ProductPicture::className());
+                    $productPicture->attributes = [
+                        'product_id' => $this->product->id,
+                        'value' => ArrayHelper::getValue($picture, 'path'),
+                    ];
+                    $productPicture->save();
+                }
             }
             foreach($this->attributeAssignments as $attributeAssignment) {
                 $productAttributeAssignment = ProductAttributeAssignment::findOrCreate([

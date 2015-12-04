@@ -67,6 +67,7 @@ class Product extends \common\components\ActiveRecord
             [['logo'], 'string', 'max' => 128],
             [['is_new', 'is_best', 'is_hot'], 'default', 'value' => 0],
             ['status', 'default', 'value' => self::STATUS_DEFAULT],
+            [['display_order', 'score'], 'default', 'value' => 0],
         ];
     }
 

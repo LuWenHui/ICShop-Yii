@@ -60,7 +60,6 @@ $this->title = '产品分类';
                 'id',
                 'name',
                 'updated_at:datetime',
-                'slug',
                 [
                     'class' => ActionColumn::className(),
                     // you may configure additional properties here

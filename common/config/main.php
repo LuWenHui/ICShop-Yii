@@ -23,10 +23,10 @@ return [
         ],
         'fileStorage'=>[
             'class' => 'trntv\filekit\Storage',
-            'baseUrl' => '@uploadweb',
+            'baseUrl' => 'http://upload.itcast-shop.dev',
             'filesystem'=> [
                 'class' => 'common\components\LocalFlysystemBuilder',
-                'path' => '@uploadwebroot',
+                'path' => dirname(dirname(__DIR__)) . '/upload',
             ],
         ],
     ],

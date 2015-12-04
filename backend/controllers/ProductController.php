@@ -105,7 +105,7 @@ class ProductController extends Controller
         $model = Yii::createObject(ProductEditForm::className());
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['view', 'id' => $model->product->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
