@@ -55,6 +55,7 @@ class AdminUserLoginForm extends Model
     {
         if ($this->_user === null) {
             $this->_user = AdminUser::findByEmail($this->email);
+            $this->_user = $this->_user ? $this->_user : false;
         }
 
         return $this->_user;
