@@ -6,6 +6,7 @@ use Yii;
 use common\components\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
+use yii\base\InvalidCallException;
 
 class ProductCategory extends ActiveRecord {
     public static function tableName() {
@@ -33,6 +34,7 @@ class ProductCategory extends ActiveRecord {
             'id' => Yii::t('app', 'Id'),
             'name' => Yii::t('app', 'Product Category Name'),
             'parent_id' => Yii::t('app', 'Product Category Parent'),
+            'level' => Yii::t('app', 'Product Category Level'),
             'slug' => Yii::t('app', 'Slug'),
             'icon_class' => Yii::t('app', 'Icon Class'),
             'display_order' => Yii::t('app', 'Display Order'),
@@ -67,7 +69,7 @@ class ProductCategory extends ActiveRecord {
     }
     
     protected static function buildSelectTree($childrens, $level = 0, $parent_id = 0) {
-        static $_tree;
+        static $_tree = [];
         foreach($childrens as $index => $children) {
             if ($parent_id == $children->parent_id) {
                 $_tree[$children->id] = str_repeat('-', $level * 4) . $children->name;
@@ -81,8 +83,58 @@ class ProductCategory extends ActiveRecord {
     public static function getList($refresh = false) {
         static $_list;
         if (!isset($_list) || $refresh) {
-            $_list = static::softFind()->all();
+            $_list = [];
+            foreach(static::softFind()->all() as $productCategory) {
+                $_list[$productCategory->id] = $productCategory;
+            }
         }
         return $_list;
+    }
+
+    public static function getListByLevel($level = 1) {
+        static $_list;
+        if (!isset($_list)) {
+            $_list = [];
+            foreach(static::getList() as $productCategory) {
+                if ($productCategory->level == $level) {
+                    $_list[$productCategory->id] = $productCategory;
+                }
+            }
+        }
+        return $_list;
+    }
+
+    public static function getListByParentId($parentId) {
+        $_list = [];
+        foreach(static::getList() as $productCategory) {
+            if ($productCategory->parent_id == $parentId) {
+                $_list[$productCategory->id] = $productCategory;
+            }
+        }
+        return $_list;
+    }
+
+    public function beforeSave($insert) {
+        if (parent::beforeSave($insert)) {
+            $this->level = static::calculateLevel($this);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function calculateLevel(ProductCategory $productCategory, $refresh = false) {
+        $level = 1;
+        $existsIds = [$productCategory->id];
+        $loopProductCategory = $productCategory;
+        while($loopProductCategory && $loopProductCategory->parent_id) {
+            if (in_array($loopProductCategory->parent_id, $existsIds)) {
+                throw new InvalidCallException(Yii::t('app', 'Ocurr Limitless Recursive call.'));
+            }
+            $level = $level + 1;
+            $loopProductCategory = ArrayHelper::getValue(static::getList($refresh), $loopProductCategory->parent_id);
+            $extends[] = $loopProductCategory->id;
+        }
+        return $level;
     }
 }

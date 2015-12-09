@@ -59,6 +59,11 @@ $this->title = '产品分类';
                 ],
                 'id',
                 'name',
+                'level',
+                [
+                    'label' => Yii::t('app', 'Product Category Parent'),
+                    'attribute' => 'parent.name',
+                ],
                 'updated_at:datetime',
                 [
                     'class' => ActionColumn::className(),

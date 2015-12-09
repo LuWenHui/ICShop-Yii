@@ -30,6 +30,7 @@ return [
     'Product Category' => '产品分类',
     'Product Category Parent' => '产品分类上级',
     'Product Category Name' => '产品分类名',
+    'Product Category Level' => '产品分类级别',
     
     // product_attribute_category
     'Create Product Attribute Category' => '添加产品属性分类',
