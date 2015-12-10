@@ -299,80 +299,25 @@ $this->title = '京西商城';
 		<!-- 导购左边区域 start -->
 		<div class="guide_content fl">
 			<h2>
-				<span class="on">疯狂抢购</span>
-				<span>热卖商品</span>
+				<span class="on">热卖商品</span>
 				<span>推荐商品</span>
 				<span>新品上架</span>
 				<span class="last">猜您喜欢</span>
 			</h2>
 			
 			<div class="guide_wrap">
-				<!-- 疯狂抢购 start-->
-				<div class="crazy">
-					<ul>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/crazy1.jpg" alt="" /></a></dt>
-								<dd><a href="">惠普G4-1332TX 14英寸</a></dd>
-								<dd><span>售价：</span><strong> ￥2999.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/crazy2.jpg" alt="" /></a></dt>
-								<dd><a href="">直降100元！TCL118升冰箱</a></dd>
-								<dd><span>售价：</span><strong> ￥800.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/crazy3.jpg" alt="" /></a></dt>
-								<dd><a href="">康佳液晶37寸电视机</a></dd>
-								<dd><span>售价：</span><strong> ￥2799.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/crazy4.jpg" alt="" /></a></dt>
-								<dd><a href="">梨子平板电脑7.9寸</a></dd>
-								<dd><span>售价：</span><strong> ￥1999.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/crazy5.jpg" alt="" /></a></dt>
-								<dd><a href="">好声音耳机</a></dd>
-								<dd><span>售价：</span><strong> ￥199.00</strong></dd>
-							</dl>
-						</li>
-					</ul>	
-				</div>
-				<!-- 疯狂抢购 end-->
-
 				<!-- 热卖商品 start -->
-				<div class="hot none">
+				<div class="hot">
 					<ul>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/hot1.jpg" alt="" /></a></dt>
-								<dd><a href="">索尼双核五英寸四核手机！</a></dd>
-								<dd><span>售价：</span><strong> ￥1386.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/hot2.jpg" alt="" /></a></dt>
-								<dd><a href="">华为通话平板仅需969元！</a></dd>
-								<dd><span>售价：</span><strong> ￥969.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/hot3.jpg" alt="" /></a></dt>
-								<dd><a href="">卡姿兰明星单品7件彩妆套装</a></dd>
-								<dd><span>售价：</span><strong> ￥169.00</strong></dd>
-							</dl>
-						</li>
+                        <?php foreach($hotProducts as $product): ?>
+                            <li>
+                                <dl>
+                                    <dt><a href=""><img src="<?= $product->logoAccessUrl ?>" alt="" /></a></dt>
+                                    <dd><a href=""><?= $product->name ?></a></dd>
+                                    <dd><span>售价：</span><strong> ￥<?= $product->our_price ?></strong></dd>
+                                </dl>
+                            </li>
+                        <?php endforeach; ?>
 					</ul>
 				</div>
 				<!-- 热卖商品 end -->
@@ -380,27 +325,15 @@ $this->title = '京西商城';
 				<!-- 推荐商品 atart -->
 				<div class="recommend none">
 					<ul>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/recommend1.jpg" alt="" /></a></dt>
-								<dd><a href="">黄飞红麻辣花生整箱特惠装</a></dd>
-								<dd><span>售价：</span><strong> ￥139.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/recommend2.jpg" alt="" /></a></dt>
-								<dd><a href="">戴尔IN1940MW 19英寸LE</a></dd>
-								<dd><span>售价：</span><strong> ￥679.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/recommend3.jpg" alt="" /></a></dt>
-								<dd><a href="">罗辑思维音频车载CD</a></dd>
-								<dd><span>售价：</span><strong> ￥24.80</strong></dd>
-							</dl>
-						</li>
+                        <?php foreach($bestProducts as $product): ?>
+                            <li>
+                                <dl>
+                                    <dt><a href=""><img src="<?= $product->logoAccessUrl ?>" alt="" /></a></dt>
+                                    <dd><a href=""><?= $product->name ?></a></dd>
+                                    <dd><span>售价：</span><strong> ￥<?= $product->our_price ?></strong></dd>
+                                </dl>
+                            </li>
+                        <?php endforeach; ?>
 					</ul>
 				</div>
 				<!-- 推荐商品 end -->
@@ -408,27 +341,15 @@ $this->title = '京西商城';
 				<!-- 新品上架 start-->
 				<div class="new none">
 					<ul>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/new1.jpg" alt="" /></a></dt>
-								<dd><a href="">E路航T70超薄GPS 7寸大屏！</a></dd>
-								<dd><span>售价：</span><strong> ￥369.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/new2.jpg" alt="" /></a></dt>
-								<dd><a href="">乐和居 爆品 特价疯狂抢</a></dd>
-								<dd><span>售价：</span><strong> ￥2799.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/new3.jpg" alt="" /></a></dt>
-								<dd><a href="">北欧 套装 抄底再续最后几小时</a></dd>
-								<dd><span>售价：</span><strong> ￥999.00</strong></dd>
-							</dl>
-						</li>
+                        <?php foreach($newProducts as $product): ?>
+                            <li>
+                                <dl>
+                                    <dt><a href=""><img src="<?= $product->logoAccessUrl ?>" alt="" /></a></dt>
+                                    <dd><a href=""><?= $product->name ?></a></dd>
+                                    <dd><span>售价：</span><strong> ￥<?= $product->our_price ?></strong></dd>
+                                </dl>
+                            </li>
+                        <?php endforeach; ?>
 					</ul>
 				</div>
 				<!-- 新品上架 end-->
@@ -436,27 +357,15 @@ $this->title = '京西商城';
 				<!-- 猜您喜欢 start -->
 				<div class="guess none">
 					<ul>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/guess1.jpg" alt="" /></a></dt>
-								<dd><a href="">Thinkpad USB光电鼠标</a></dd>
-								<dd><span>售价：</span><strong> ￥39.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/guess2.jpg" alt="" /></a></dt>
-								<dd><a href="">宜客莱（ECOLA）电脑散热器</a></dd>
-								<dd><span>售价：</span><strong> ￥89.00</strong></dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt><a href=""><img src="images/guess3.jpg" alt="" /></a></dt>
-								<dd><a href="">巴黎欧莱雅男士洁面膏 100ml</a></dd>
-								<dd><span>售价：</span><strong> ￥30.00</strong></dd>
-							</dl>
-						</li>
+                        <?php foreach($randomProducts as $product): ?>
+                            <li>
+                                <dl>
+                                    <dt><a href=""><img src="<?= $product->logoAccessUrl ?>" alt="" /></a></dt>
+                                    <dd><a href=""><?= $product->name ?></a></dd>
+                                    <dd><span>售价：</span><strong> ￥<?= $product->our_price ?></strong></dd>
+                                </dl>
+                            </li>
+                        <?php endforeach; ?>
 					</ul>
 				</div>
 				<!-- 猜您喜欢 end -->

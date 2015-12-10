@@ -8,6 +8,7 @@ use yii\helpers\ArrayHelper;
 use common\models\ProductCategory;
 use common\models\ProductPicture;
 use common\models\ProductAttributeAssignment;
+use SORT_DESC;
 
 /**
  * This is the model class for table "{{%product}}".
@@ -174,5 +175,56 @@ class Product extends \common\components\ActiveRecord
     
     public function getLogoAccessUrl() {
         return $this->logo ? Yii::$app->params['uploadweb'] . '/' . $this->logo : '';
+    }
+
+    public static function getHots($limit = 5) {
+        return static::softFind()->where(['is_hot' => self::IS_HOT_HOT])->orderBy(['created_at' => SORT_DESC])->limit($limit)->all();
+    }
+
+    // 热卖
+    public static function getBests($limit = 5) {
+        return static::softFind()->where(['is_best' => self::IS_BEST_BEST])->orderBy(['created_at' => SORT_DESC])->limit($limit)->all();
+    }
+
+    // 新品
+    public static function getNews($limit = 5) {
+        return static::softFind()->where(['is_new' => self::IS_NEW_NEW])->orderBy(['created_at' => SORT_DESC])->limit($limit)->all();
+    }
+
+    // random
+    public static function getRandoms($limit = 5) {
+        $command = Yii::$app->db->createCommand(strtr('
+SELECT 
+    *
+FROM
+    :product AS t1
+        JOIN
+    (SELECT 
+        ROUND(RAND() * ((SELECT 
+                    MAX(id)
+                FROM
+                    :product) - (SELECT 
+                    MIN(id)
+                FROM
+                    :product)) + (SELECT 
+                    MIN(id)
+                FROM
+                    :product)) AS id
+    ) AS t2
+WHERE
+    t1.id >= t2.id
+ORDER BY t1.id
+LIMIT :limit;
+', [':product' => Yii::$app->db->schema->getRawTableName(static::tableName())]));
+        $command->bindValues([
+            ':limit' => $limit,
+        ]);
+        $products = [];
+        foreach($command->queryAll() as $productNameValuePairs) {
+            $product = new static;
+            static::populateRecord($product, $productNameValuePairs);
+            $products[] = $product;
+        }
+        return $products;
     }
 }
