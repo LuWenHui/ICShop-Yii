@@ -45,6 +45,7 @@ return [
     'Product Attribute Option' => '属性可选项',
     
     // product
+    'Code' => '编码',
     'Product' => '产品',
     'Products' => '产品',
     'Create Product' => '添加产品',

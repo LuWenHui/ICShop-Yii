@@ -13,6 +13,7 @@ use yii\helpers\ArrayHelper;
 class ProductEditForm extends Model {
     public $category_id;
     public $name;
+    public $code;
     public $inventory;
     public $description;
     public $logo;
@@ -41,7 +42,7 @@ class ProductEditForm extends Model {
     public function rules()
     {
         return [
-            [['category_id', 'name'], 'required'],
+            [['category_id', 'name', 'code'], 'required'],
             [['name'], 'unique', 'targetClass' => Product::className(), 'filter' => function($query) {
                 if (!$this->product->isNewRecord) {
                     $query->andWhere(['!=', 'id', $this->product->id]);
@@ -66,6 +67,7 @@ class ProductEditForm extends Model {
         return [
             'category_id' => Yii::t('app', 'Category ID'),
             'name' => Yii::t('app', 'Name'),
+            'code' => Yii::t('app', 'Code'),
             'inventory' => Yii::t('app', 'Inventory'),
             'description' => Yii::t('app', 'Description'),
             'logo' => Yii::t('app', 'Logo'),

@@ -37,6 +37,8 @@ use yii\helpers\Url;
             
                 <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
                 
+                <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
+                
                 <?= $form->field($model, 'inventory')->input('number') ?>
             
                 <?= $form->field($model, 'logo')->widget(
