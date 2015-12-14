@@ -39,7 +39,7 @@ class ProductAttributesEditForm extends ProductEditForm {
                 $attributeAssignment->delete();
             }
             foreach($this->attribute_assignments as $attributeAssignment) {
-                $attributeAssignment['price'] = $attributeAssignment['price'] ? $attributeAssignment['price'] : 0;
+                $attributeAssignment['price'] = ArrayHelper::getValue($attributeAssignment, 'price', 0);
                 $productAttributeAssignment = ProductAttributeAssignment::findOrCreate([
                     'product_id' => $this->product->id,
                     'attribute_id' => $attributeAssignment['attribute_id'],

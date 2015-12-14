@@ -58,4 +58,8 @@ class ProductPicture extends \common\components\ActiveRecord
             TimestampBehavior::className(),
         ];
     }
+
+    public function getAccessUrl() {
+        return $this->value ? Yii::$app->params['uploadweb'] . '/' . $this->value : '';
+    }
 }

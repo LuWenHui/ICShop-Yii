@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Url;
 use common\models\ProductCategory;
 use common\models\ProductPicture;
 use common\models\ProductAttributeAssignment;
@@ -45,6 +46,9 @@ class Product extends \common\components\ActiveRecord
     const IS_BEST_NOT_BEST = 0;
     
     protected $_attributeAssignmentsIdMap;
+    protected $_breadcrumbs;
+    protected $_relateCategories;
+
     /**
      * @inheritdoc
      */
@@ -59,7 +63,7 @@ class Product extends \common\components\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'name'], 'required'],
+            [['category_id', 'name', 'code'], 'required'],
             [['name'], 'unique'],
             [['category_id', 'inventory', 'promotion_start_time', 'promotion_end_time', 'is_new', 'is_hot', 'is_best', 'display_order', 'score', 'created_at', 'updated_at', 'status'], 'integer'],
             [['description'], 'string'],
@@ -81,6 +85,7 @@ class Product extends \common\components\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'category_id' => Yii::t('app', 'Category ID'),
             'name' => Yii::t('app', 'Name'),
+            'code' => Yii::t('app', 'Code'),
             'inventory' => Yii::t('app', 'Inventory'),
             'description' => Yii::t('app', 'Description'),
             'logo' => Yii::t('app', 'Logo'),
@@ -175,6 +180,35 @@ class Product extends \common\components\ActiveRecord
     
     public function getLogoAccessUrl() {
         return $this->logo ? Yii::$app->params['uploadweb'] . '/' . $this->logo : '';
+    }
+
+    public function getBreadcrumbs() {
+        if ($this->_breadcrumbs === null) {
+            $this->_breadcrumbs = [];
+            array_unshift($this->_breadcrumbs, [
+                'url' => Url::to(['product/view', 'id' => $this->id]),
+                'label' => $this->name,
+            ]);
+            $productCategory = $this->category;
+            while($productCategory) {
+                array_unshift($this->_breadcrumbs, [
+                    'url' => Url::to('#'),
+                    'label' => $productCategory->name,
+                ]);
+                $productCategory = $productCategory->parent;
+            }
+        }
+        return $this->_breadcrumbs;
+    }
+
+    public function getRelateCategories() {
+        if ($this->_relateCategories === null) {
+            $this->_relateCategories = [];
+            if ($this->category && $this->category->parent) {
+                $this->_relateCategories = ProductCategory::findAll(['parent_id' => $this->category->parent->id]);
+            }
+        }
+        return $this->_relateCategories;
     }
 
     public static function getHots($limit = 5) {

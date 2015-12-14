@@ -33,8 +33,33 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
             <thead>
                 <tr>
                     <td width="10%" colspan="5">
-                        <div class="col-md-12">
-                            <?= Html::dropDownList('product-attribute-category', $categoryId ? $categoryId : $productAttributeCategory->id, ArrayHelper::map(ProductAttributeCategory::getList(), 'id', 'name'), ['class' => 'chosen-select', 'id' => 'product-attribute-category']) ?>
+                        <div class="row">
+                            <div class="col-md-2 col-md-offset-1">
+                                <style>
+								   .checkbox {
+										position: relative;
+										display: block;
+										margin-top: 5px;
+										margin-bottom: 5px;
+									} 
+                                </style>
+<?php
+$js = <<<'JS'
+$(document).on('click', '#lock-attribute-category', function() {
+   $('#product-attribute-category').prop('disabled', $(this).is(':checked')).trigger("chosen:updated"); 
+});
+JS;
+$this->registerJs($js);
+?>
+                                <div class="checkbox i-checks">
+                                    <label>
+                                        <input id='lock-attribute-category' type="checkbox" checked><i></i> 锁定/编辑
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <?= Html::dropDownList('product-attribute-category', $categoryId ? $categoryId : $productAttributeCategory->id, ArrayHelper::map(ProductAttributeCategory::getList(), 'id', 'name'), ['class' => 'chosen-select', 'id' => 'product-attribute-category', 'disabled' => true]) ?>
+                            </div>
                         </div>
                     </td>
                 </tr>
@@ -52,10 +77,14 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
                                     <?= Html::hiddenInput($model->formName() . '[attribute_assignments][' . $elementIndex . '][attribute_id]', $productAttribute->id) ?>
                                 </td>
                                 <td width="30%">
-                                    <?= Html::dropDownList($model->formName() . '[attribute_assignments][' . $elementIndex . '][attribute_option]', ArrayHelper::getValue($assignmentProductIdMapItem, 'attribute_option'), $productAttribute->optoinIdNames) ?>
+                                    <?php if ($productAttribute->isMultiple): ?>
+                                        <?= Html::dropDownList($model->formName() . '[attribute_assignments][' . $elementIndex . '][attribute_option]', ArrayHelper::getValue($assignmentProductIdMapItem, 'attribute_option'), $productAttribute->optoinIdNames) ?>
+                                    <?php else: ?>
+                                        <?= Html::input('text', $model->formName() . '[attribute_assignments][' . $elementIndex . '][attribute_option]', ArrayHelper::getValue($assignmentProductIdMapItem, 'attribute_option')) ?>
+                                    <?php endif; ?>
                                 </td>
                                 <td width="40%">
-                                    <?= Html::input('number', $model->formName() . '[attribute_assignments][' . $elementIndex . '][price]', ArrayHelper::getValue($assignmentProductIdMapItem, 'price')) ?>
+                                    <?= Html::input('number', $model->formName() . '[attribute_assignments][' . $elementIndex . '][price]', ArrayHelper::getValue($assignmentProductIdMapItem, 'price'), ['disabled' => !$productAttribute->isMultiple]) ?>
                                 </td>
                                 <td width="10%">
                                     <?php if ($productAttribute->isMultiple): ?>
@@ -75,10 +104,14 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
                                 <?= Html::hiddenInput($model->formName() . '[attribute_assignments][' . $index * 100 . '][attribute_id]', $productAttribute->id) ?>
                             </td>
                             <td width="30%">
-                                <?= Html::dropDownList($model->formName() . '[attribute_assignments][' . $index * 100 . '][attribute_option]', null, $productAttribute->optoinIdNames) ?>
+                                <?php if ($productAttribute->isMultiple): ?>
+                                    <?= Html::dropDownList($model->formName() . '[attribute_assignments][' . $index * 100 . '][attribute_option]', null, $productAttribute->optoinIdNames) ?>
+                                <?php else: ?>
+                                    <?= Html::input('text', $model->formName() . '[attribute_assignments][' . $index * 100 . '][attribute_option]', null) ?>
+                                <?php endif; ?>
                             </td>
                             <td width="40%">
-                                <?= Html::input('number', $model->formName() . '[attribute_assignments][' . $index * 100 . '][price]', 0) ?>
+                                <?= Html::input('number', $model->formName() . '[attribute_assignments][' . $index * 100 . '][price]', 0, ['disabled' => !$productAttribute->isMultiple]) ?>
                             </td>
                             <td width="10%">
                                 <?php if ($productAttribute->isMultiple): ?>

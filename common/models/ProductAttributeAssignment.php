@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use common\models\ProductAttribute;
 
 /**
  * This is the model class for table "{{%product_attribute_assignment}}".
@@ -59,5 +60,9 @@ class ProductAttributeAssignment extends \common\components\ActiveRecord
         return [
             TimestampBehavior::className(),
         ];
+    }
+
+    public function getBelongAttribute() {
+        return $this->hasOne(ProductAttribute::className(), ['id' => 'attribute_id']);
     }
 }
