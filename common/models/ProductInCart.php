@@ -31,4 +31,25 @@ class ProductInCart extends Product implements CartPositionInterface {
 
         return $displayPairs;
     }
+
+    public static function getSerializedAttributeAssignments($attributeAssignments) {
+        $stringRepresentation = [];
+        foreach($attributeAssignments as $attributeAssignment) {
+            $stringRepresentation[] = $attributeAssignment['attribute_id'] . '*' . $attributeAssignment['attribute_option'];
+
+        }
+        return implode('|', $stringRepresentation);
+    }
+
+    public static function serializedAttributeAssignmentsToObject($stringRepresentation) {
+        $attributeIdOption = [];
+        foreach(explode('|', $stringRepresentation) as $attributeAssignment) {
+            list($attributeId, $attributeOption) = explode('*', $attributeAssignment);
+            $attributeIdOption[] = [
+                'attribute_id' => $attributeId,
+                'attribute_option' => $attributeOption,
+            ];
+        }
+        return $attributeIdOption;
+    }
 }

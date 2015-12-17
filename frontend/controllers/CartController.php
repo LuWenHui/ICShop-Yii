@@ -28,10 +28,6 @@ class CartController extends Controller {
         return $this->render('step1');
     }
 
-    public function actionStep2() {
-        return $this->render('step2');
-    }
-
 	public function actionAddToCart() {
 		$productId = Yii::$app->request->post('productId', false);
         $quantity = abs((int) Yii::$app->request->post('quantity', false));

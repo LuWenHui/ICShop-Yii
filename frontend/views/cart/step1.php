@@ -65,7 +65,7 @@ $this->title = '我的购物车';
     </table>
     <div class="cart_btn w990 bc mt10">
         <a href="<?= Yii::$app->homeUrl ?>" class="continue">继续购物</a>
-        <a href="<?= Url::to(['cart/step2']) ?>" class="checkout">结 算</a>
+        <a href="<?= Url::to(['order/create']) ?>" class="checkout">结 算</a>
     </div>
 </div>
 <!-- 主体部分 end -->
