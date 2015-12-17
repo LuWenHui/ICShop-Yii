@@ -82,3 +82,32 @@ $(function(){
 		$(this).addClass("on").siblings().removeClass("on");
 	});
 });
+
+$(document).on('click', '#addToCart', function(e) {
+    e.preventDefault();
+    var productId = $('#product').data('product-id');
+    var productAttributeAssignments = [];
+    var quantity = $('#quantity').val();
+
+    $('a.selected', '#productAttributeAssignments').each(function(idx, element) {
+        productAttributeAssignments.push({
+            'productId': $(element).data('product-id'),
+            'attributeId': $(element).data('attribute-id'),
+            'attributeOption': $(element).data('attribute-option')
+        });
+    });
+    $.ajax({
+        'url': '/cart/add-to-cart',
+        'method': 'POST',
+        'dataType': 'JSON',
+        'data': {
+            'attributeAssignments': productAttributeAssignments,
+            'productId': productId,
+            'quantity': quantity
+        }
+    }).success(function(data) {
+        alert(data.message);
+    }).fail(function() {
+        alert('出现错误，请稍后重试。');
+    });
+});

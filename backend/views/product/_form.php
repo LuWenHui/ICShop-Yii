@@ -59,12 +59,10 @@ use yii\helpers\Url;
                 <?= $form->field($model, 'promotion_price')->textInput(['maxlength' => true]) ?>
             
                 <?= $form->field($model, 'promotion_start_time')->widget(DatePicker::classname(), [
-                    //'language' => 'ru',
                     'dateFormat' => 'yyyy-MM-dd',
                 ])  ?>
             
                 <?= $form->field($model, 'promotion_end_time')->widget(DatePicker::classname(), [
-                    //'language' => 'ru',
                     'dateFormat' => 'yyyy-MM-dd',
                 ])  ?>
             

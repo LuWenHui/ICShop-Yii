@@ -122,7 +122,7 @@ class Product extends \common\components\ActiveRecord
     public function getAttributeAssignments() {
         return $this->hasMany(ProductAttributeAssignment::className(), ['product_id' => 'id'])->andWhere(['!=', 'status', self::STATUS_DELETE]);
     }
-    
+
     public function getAttributeAssignmentsAttributeIdMap() {
         if (!isset($this->_attributeAssignmentsIdMap)) {
             $this->_attributeAssignmentsIdMap = [];

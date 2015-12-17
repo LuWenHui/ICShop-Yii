@@ -1,5 +1,6 @@
 <?php
 use common\models\ProductCategory;
+use yii\helpers\Url;
 
 $this->registerJsFile('js/header.js', ['depends' => ['frontend\assets\AppAsset']]);
 ?>
@@ -80,7 +81,7 @@ $this->registerJsFile('js/header.js', ['depends' => ['frontend\assets\AppAsset']
         <div class="cart fl">
             <dl>
                 <dt>
-                    <a href="">去购物车结算</a>
+                    <a href="<?= Url::to(['cart/step1']) ?>">去购物车结算</a>
                     <b></b>
                 </dt>
                 <dd>

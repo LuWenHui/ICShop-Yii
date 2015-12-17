@@ -71,12 +71,17 @@ class ProductAttribute extends \common\components\ActiveRecord
         return $this->hasOne(ProductAttributeCategory::className(), ['id' => 'category_id']);
     }
     
-    public function getOptoinIdNames() {
+    public function getOptionIdNames() {
         $optionsIdNames = [];
         foreach(explode(self::SEPARATOER, $this->option) as $option) {
+			$option = trim($option);
             $optionsIdNames[$option] = $option;
         }
         return $optionsIdNames;
+    }
+
+    public function isValidOption($option) {
+        return in_array($option, $this->optionIdNames);
     }
     
     public function getIsUnique() {

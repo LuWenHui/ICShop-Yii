@@ -6,9 +6,11 @@ use Yii;
 use yii\web\Controller;
 use common\models\Product;
 use yii\web\NotFoundHttpException;
+use yii\helpers\ArrayHelper;
 
 class ProductController extends Controller
 {
+
     public function actionView($id) {
         $product = $this->getModel($id);
         return $this->render('view', compact('product'));

@@ -5,6 +5,8 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use common\models\ProductAttribute;
+use yii\helpers\ArrayHelper;
+use common\behaviors\TrimBehavior;
 
 /**
  * This is the model class for table "{{%product_attribute_assignment}}".
@@ -27,6 +29,15 @@ class ProductAttributeAssignment extends \common\components\ActiveRecord
         return '{{%product_attribute_assignment}}';
     }
 
+    public function behaviors() {
+        return ArrayHelper::merge(parent::behaviors(), [
+            TimestampBehavior::className(),
+            'trim' => [
+                'class' => TrimBehavior::className(),
+                'attributes' => ['attribute_option'],
+            ],
+        ]);
+    }
     /**
      * @inheritdoc
      */
@@ -53,12 +64,6 @@ class ProductAttributeAssignment extends \common\components\ActiveRecord
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
             'status' => Yii::t('app', 'Status'),
-        ];
-    }
-    
-    public function behaviors() {
-        return [
-            TimestampBehavior::className(),
         ];
     }
 

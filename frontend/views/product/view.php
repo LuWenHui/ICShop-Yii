@@ -141,7 +141,7 @@ $this->title = '商品详情';
     <!-- 主体页面左侧内容 end -->
     
     <!-- 商品信息内容 start -->
-    <div class="goods_content fl mt10 ml10">
+    <div class="goods_content fl mt10 ml10" id="product" data-product-id="<?= $product->id ?>">
         <!-- 商品概要信息 start -->
         <div class="summary">
             <h3><strong><?= $product->name ?></strong></h3>
@@ -191,7 +191,7 @@ $this->title = '商品详情';
                     <li class="star"><span>商品评分：</span> <strong></strong><a href="">(已有21人评价)</a></li> <!-- 此处的星级切换css即可 默认为5星 star4 表示4星 star3 表示3星 star2表示2星 star1表示1星 -->
                 </ul>
                 <form action="" method="post" class="choose">
-                    <ul>
+                    <ul id="productAttributeAssignments">
                         <?php foreach($product->attributeAssignmentsAttributeIdMap as $attributeId => $attributeAssignments): ?>
                             <?php $productAttribute = ProductAttribute::findOne($attributeId) ?>
                             <?php if (!$productAttribute || $productAttribute->isUnique): continue; endif; ?>
@@ -200,7 +200,7 @@ $this->title = '商品详情';
                                     <dt><?= $productAttribute->name ?>：</dt>
                                     <dd>
                                         <?php foreach($attributeAssignments as $index => $attributeAssignment): ?>
-                                            <a class="<?= ($index == 0) ? "selected" : "" ?>" href="javascript:;"><?= $attributeAssignment->attribute_option ?> <input type="radio" name="color" value="<?= $attributeAssignment->attribute_option ?>" checked="checked" /></a>
+                                            <a data-product-id="<?= $attributeAssignment->product_id ?>" data-attribute-id="<?= $attributeAssignment->attribute_id ?>" data-attribute-option="<?= $attributeAssignment->attribute_option ?>" class="<?= ($index == 0) ? "selected" : "" ?>" href="javascript:;"><?= $attributeAssignment->attribute_option ?> <input type="radio" name="color" value="<?= $attributeAssignment->attribute_option ?>" checked="checked" /></a>
                                         <?php endforeach; ?>
                                         <input type="hidden" name="" value="" />
                                     </dd>
@@ -213,7 +213,7 @@ $this->title = '商品详情';
                                 <dt>购买数量：</dt>
                                 <dd>
                                     <a href="javascript:;" id="reduce_num"></a>
-                                    <input type="text" name="amount" value="1" class="amount"/>
+                                    <input type="text" name="amount" id="quantity" value="1" class="amount"/>
                                     <a href="javascript:;" id="add_num"></a>
                                 </dd>
                             </dl>
@@ -223,7 +223,7 @@ $this->title = '商品详情';
                             <dl>
                                 <dt>&nbsp;</dt>
                                 <dd>
-                                    <input type="submit" value="" class="add_btn" />
+                                    <input type="submit" value="" id="addToCart" class="add_btn" />
                                 </dd>
                             </dl>
                         </li>
@@ -254,13 +254,11 @@ $this->title = '商品详情';
                             <li><span>商品名称：</span><?= $product->name ?></li>
                             <li><span>商品编号：</span><?= $product->id ?></li>
                             <li><span>上架时间：</span><?= Yii::$app->formatter->asDate($product->created_at) ?></li>
-                            <li><span>商品毛重：</span>2.47kg</li>
-                            <li><span>商品产地：</span>中国大陆</li>
-                            <li><span>显卡：</span>集成显卡</li>
-                            <li><span>触控：</span>非触控</li>
-                            <li><span>厚度：</span>正常厚度（>25mm）</li>
-                            <li><span>处理器：</span>Intel i5</li>
-                            <li><span>尺寸：</span>12英寸</li>
+                            <?php foreach($product->attributeAssignmentsAttributeIdMap as $attributeId => $attributeAssignments): ?>
+                                <?php $productAttribute = ProductAttribute::findOne($attributeId) ?>
+                                <?php if (!$productAttribute || $productAttribute->isMultiple): continue; endif; ?>
+                                <li><span><?= $productAttribute->name ?>：</span><?= reset($attributeAssignments)->attribute_option ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
 
