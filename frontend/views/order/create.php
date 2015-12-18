@@ -32,7 +32,7 @@ $this->title = '填写订单详细信息';
     <?= Html::csrfMetaTags() ?>
     <!-- 主体部分 start -->
     <div class="fillin w990 bc mt15">
-        <p><?= Html::errorSummary($order) ?></p>
+        <p><?= Html::errorSummary($model) ?></p>
         <div class="fillin_hd">
             <h2>填写并核对订单信息</h2>
         </div>
@@ -47,11 +47,11 @@ $this->title = '填写订单详细信息';
                         <ul>
                             <li>
                                 <label for=""><span>*</span>联系方式：</label>
-                                <input type="text" name="contact" class="txt" value="<?= $order->contact ?>" />
+                                <input type="text" name="contact" class="txt" value="<?= $model->contact ?>" />
                             </li>
                             <li>
                                 <label for=""><span>*</span>详细地址：</label>
-                                <input type="text" name="address" class="txt address" value="<?= $order->address ?>" />
+                                <input type="text" name="address" class="txt address" value="<?= $model->address ?>" />
                             </li>
                         </ul>
                     </form>
@@ -71,7 +71,7 @@ $this->title = '填写订单详细信息';
                         </thead>
                         <tbody>
                             <?php foreach(ProductOrder::$shipmentList as $id => $name): ?>
-                                <?php $checked = ($order->shipment == $id) || ($id == 1); ?>
+                                <?php $checked = ($model->shipment == $id) || ($id == 1); ?>
                                 <tr class="<?php if($checked): ?>cur<?php endif; ?>">	
                                     <td>
                                         <input type="radio" name="shipment" <?php if ($checked): ?>checked<?php endif; ?> value="<?= $id ?>" /><?= $name ?>
@@ -90,7 +90,7 @@ $this->title = '填写订单详细信息';
                 <div class="pay_select">
                     <table> 
                         <?php foreach(ProductOrder::$paymentList as $id => $name): ?>
-                            <?php $checked = ($order->payment == $id) || ($id == 1); ?>
+                            <?php $checked = ($model->payment == $id) || ($id == 1); ?>
                             <tr class="<?php if($checked): ?>cur<?php endif; ?>">	
                                 <td class="col1"><input <?php if ($checked): ?>checked<?php endif; ?> type="radio" name="payment" value="<?= $id ?>" /><?= $name ?></td>
                             </tr>

@@ -67,6 +67,7 @@ class ProductOrder extends \common\components\ActiveRecord
             [['user_id', 'paid_time', 'status', 'payment', 'shipment'], 'integer'],
             [['total_price'], 'number'],
             [['address'], 'string', 'max' => 200],
+            [['out_order_no', 'charge_id'], 'string', 'max' => 256],
             [['contact'], 'string', 'max' => 20],
             ['status', 'default', 'value' => self::STATUS_CREATED],
         ];
@@ -89,6 +90,25 @@ class ProductOrder extends \common\components\ActiveRecord
             'status' => Yii::t('app', 'Status'),
             'payment' => Yii::t('app', 'Payment'),
             'shipment' => Yii::t('app', 'Shipment'),
+            'out_order_no' => Yii::t('app', 'Out Order No'),
+            'charge_id' => Yii::t('app', 'Charge Id'),
         ];
+    }
+
+    public function getPayAmount() {
+        return $this->total_price * 100;
+    }
+
+    public function tryPaid() {
+        $chargeInfo = Yii::$app->pingpp->retrieve($this->charge_id);
+        if (!$chargeInfo) {
+            throw new NotFoundHttpException(Yii::t('app', 'specify product order charge could not be found.'));
+        }
+        if ($chargeInfo->paid) {
+            $this->status = self::STATUS_PAID;
+            return $this->save();
+        } else {
+            return false;
+        }
     }
 }

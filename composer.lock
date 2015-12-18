@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "29b6fc01ad9d646ef06c6d3890c0724d",
+    "hash": "f32b0991bcbaf47a7d83986f4647bdcf",
     "content-hash": "68f4119b6f16507061b15a52b16ef77b",
     "packages": [
         {
@@ -646,12 +646,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/idarex/pingpp-yii2.git",
-                "reference": "a727071d9bb1357cdbe3eaee6bcf6556801b61c8"
+                "reference": "4295685004d979af51c815cb601c53999222a464"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/idarex/pingpp-yii2/zipball/4295685004d979af51c815cb601c53999222a464",
-                "reference": "a727071d9bb1357cdbe3eaee6bcf6556801b61c8",
+                "reference": "4295685004d979af51c815cb601c53999222a464",
                 "shasum": ""
             },
             "require": {
@@ -673,7 +673,7 @@
                 "MIT"
             ],
             "description": "ping plus plus yii2",
-            "time": "2015-11-23 07:35:05"
+            "time": "2015-11-28 21:05:44"
         },
         {
             "name": "league/flysystem",

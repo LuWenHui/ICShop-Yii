@@ -8,6 +8,11 @@ return [
             'showScriptName' => false,
             'enableStrictParsing' => false,
         ],
+        'pingpp' => [
+            'class' => '\idarex\pingppyii2\PingppComponent',
+            'apiKey' => 'sk_test_9K048G1urnfTPenrT4erjTK0',
+            'appId' => 'app_vvXjHCiTiPSGifjr',
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

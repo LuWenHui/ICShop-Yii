@@ -41,7 +41,7 @@ class CreateProductOrderForm extends Model {
     }
 
     public function save($validate = true) {
-        if ($this->validate($validate)) {
+        if ($this->validate($validate) && !Yii::$app->cart->isEmpty) {
             $transaction = Yii::$app->db->beginTransaction();
             $this->productOrder->attributes = [
                 'user_id' => Yii::$app->user->identity->id,
@@ -70,6 +70,7 @@ class CreateProductOrderForm extends Model {
                 }
             }
             $transaction->commit();
+            Yii::$app->cart->removeAll();
             return true;
         }
         return false;

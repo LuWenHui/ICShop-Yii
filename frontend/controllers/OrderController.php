@@ -8,16 +8,12 @@ use frontend\models\CreateProductOrderForm;
 
 class OrderController extends Controller {
     public function actionCreate() {
-        $order = new CreateProductOrderForm();
-        $order->load(Yii::$app->request->post(), ''); 
-        if ($order->save(true)) {
-            return $this->redirect(['order/success'], compact('order'));
+        $model = new CreateProductOrderForm();
+        $model->load(Yii::$app->request->post(), ''); 
+        if (Yii::$app->request->isPost && $model->save(true)) {
+            return $this->render('success', compact('model'));
         } else {
-            return $this->render('create', compact('order'));
+            return $this->render('create', compact('model'));
         }
-    }
-
-    public function actionSuccess() {
-        return $this->render('success');
     }
 }
