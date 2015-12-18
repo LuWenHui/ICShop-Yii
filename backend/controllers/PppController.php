@@ -88,4 +88,9 @@ class PppController extends Controller {
     public function actionAlipaySuccessCallback() {
         var_dump(file_get_contents('php://input'));
     }
+
+    public function actionRetrieveCharge($chargeId) {
+        $charge = Yii::$app->pingpp->retrieve($chargeId);
+        var_dump($charge);die;
+    }
 }
