@@ -70,7 +70,7 @@ use yii\helpers\StringHelper;
                      [
                         'label' => '订单列表',
                         'icon' => 'i i-dot icon',
-                        'url' => ['order/index'],
+                        'url' => ['product-order/index'],
                     ],
                 ],
             ],
@@ -87,7 +87,7 @@ use yii\helpers\StringHelper;
             </a>
         </li>
         <li>
-            <a href="<?= Url::to(['order/index']) ?>">
+            <a href="<?= Url::to(['product-order/index']) ?>">
             <i class="i i-circle-sm text-success-dk"></i>
             <span>订单列表</span>
             </a>

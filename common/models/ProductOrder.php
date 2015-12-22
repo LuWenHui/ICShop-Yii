@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\helpers\ArrayHelper;
+use common\models\User;
 
 /**
  * This is the model class for table "{{%product_order}}".
@@ -110,5 +111,27 @@ class ProductOrder extends \common\components\ActiveRecord
         } else {
             return false;
         }
+    }
+
+    public static function getStatusLabels() {
+        return ArrayHelper::merge(parent::getStatusLabels(), [
+            self::STATUS_CREATED => '已创建',
+            self::STATUS_PAID => '已支付',
+            self::STATUS_DELIVERY => '已发货',
+            self::STATUS_SUCCESS => '已完成',
+            self::STATUS_SUCCESS => '已退款',
+        ]);
+    }
+
+    public function getUser() {
+        return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    public function getPaymentLabel() {
+        return ArrayHelper::getValue(self::$paymentList, $this->payment);
+    }
+
+    public function getShipmentLabel() {
+        return ArrayHelper::getValue(self::$shipmentList, $this->shipment);
     }
 }

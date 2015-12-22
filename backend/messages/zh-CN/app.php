@@ -19,6 +19,7 @@ return [
     'Update {modelClass}: ' => '修改 {modelClass}: ',
     'Description' => '描述',
     'Icon Class' => '图标类名',
+    'User ID' => '用户',
     
     // user
     'Email' => '邮箱',
@@ -61,6 +62,19 @@ return [
     'Is Best' => '推荐',
     'Score' => '赠送积分',
     'Product Pictures' => '产品图片',
+
+    // product order
+    'Product Orders' => '订单',
+    'Product Order' => '订单',
+    'Create Product Order' => '创建订单',
+    'Address' => '送货地址',
+    'Paid Time' => '付款时间',
+    'Total Price' => '订单价格',
+    'Contact' => '联系方式',
+    'Payment' => '付款方式',
+    'Shipment' => '运输方式',
+    'Out Order No' => '商户订单号',
+    'Charge Id' => '订单 ID',
     
     // uploadKit
     'Maximum number of files exceeded' => '超过最大上传文件数',
