@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use common\models\ProductAttribute;
+use common\models\Product;
 
 // !--引入jqzoom css -->
 $this->registerCssFile('style/jqzoom.css', ['depends' => 'frontend\assets\AppAsset']);
@@ -303,115 +304,28 @@ $this->title = '商品详情';
                         </div>
                     </div>
 
+                    <?php foreach($product->comments as $comment): ?>
                     <div class="comment_items mt10">
                         <div class="user_pic">
                             <dl>
-                                <dt><a href=""><img src="/images/user1.gif" alt="" /></a></dt>
-                                <dd><a href="">乖乖</a></dd>
+                                <dt><a href="#"><img src="/images/user1.gif" alt="" /></a></dt>
+                                <dd><a href="#"><?= $comment->user->username ?></a></dd>
                             </dl>
                         </div>
                         <div class="item">
                             <div class="title">
-                                <span>2013-03-11 22:18</span>
-                                <strong class="star star5"></strong> <!-- star5表示5星级 start4表示4星级，以此类推 -->
+                                <span><?= Yii::$app->formatter->asDatetime($comment->created_at) ?></span>
+                                <strong class="star star<?= $comment->rank ?>"></strong> <!-- star5表示5星级 start4表示4星级，以此类推 -->
                             </div>
-                            <div class="comment_content">
-                                <dl>
-                                    <dt>心得：</dt>
-                                    <dd>东西挺好，挺满意的！</dd>
-                                </dl>
-                                <dl>
-                                    <dt>优点：</dt>
-                                    <dd>反应速度开，散热性能好</dd>
-                                </dl>
-                                <dl>
-                                    <dt>不足：</dt>
-                                    <dd>暂时还没发现缺点哦！</dd>
-                                </dl>
-                                <dl>
-                                    <dt>购买日期：</dt>
-                                    <dd>2013-11-24</dd>
-                                </dl>
-                            </div>
+                            <div class="comment_content"><?= $comment->content ?></div>
                             <div class="btns">
-                                <a href="" class="reply">回复(0)</a>
-                                <a href="" class="useful">有用(0)</a>
+                                <a href="#" class="reply">回复(0)</a>
+                                <a href="#" class="useful">有用(0)</a>
                             </div>
                         </div>
                         <div class="cornor"></div>
                     </div>
-
-                    <div class="comment_items mt10">
-                        <div class="user_pic">
-                            <dl>
-                                <dt><a href=""><img src="/images/user2.jpg" alt="" /></a></dt>
-                                <dd><a href="">小宝贝</a></dd>
-                            </dl>
-                        </div>
-                        <div class="item">
-                            <div class="title">
-                                <span>2013-10-01 14:10</span>
-                                <strong class="star star4"></strong> <!-- star5表示5星级 start4表示4星级，以此类推 -->
-                            </div>
-                            <div class="comment_content">
-                                <dl>
-                                    <dt>心得：</dt>
-                                    <dd>外观漂亮同，还在使用过程中。</dd>
-                                </dl>
-                                <dl>
-                                    <dt>型号：</dt>
-                                    <dd>i5 8G内存版</dd>
-                                </dl>
-                                <dl>
-                                    <dt>购买日期：</dt>
-                                    <dd>2013-11-20</dd>
-                                </dl>
-                            </div>
-                            <div class="btns">
-                                <a href="" class="reply">回复(0)</a>
-                                <a href="" class="useful">有用(0)</a>
-                            </div>
-                        </div>
-                        <div class="cornor"></div>
-                    </div>
-
-                    <div class="comment_items mt10">
-                        <div class="user_pic">
-                            <dl>
-                                <dt><a href=""><img src="/images/user3.jpg" alt="" /></a></dt>
-                                <dd><a href="">天使</a></dd>
-                            </dl>
-                        </div>
-                        <div class="item">
-                            <div class="title">
-                                <span>2013-03-11 22:18</span>
-                                <strong class="star star5"></strong> <!-- star5表示5星级 start4表示4星级，以此类推 -->
-                            </div>
-                            <div class="comment_content">
-                                <dl>
-                                    <dt>心得：</dt>
-                                    <dd>挺好的，物超所值，速度挺好，WIN8用起来也不错。</dd>
-                                </dl>
-                                <dl>
-                                    <dt>优点：</dt>
-                                    <dd>散热很好，配置不错</dd>
-                                </dl>
-                                <dl>
-                                    <dt>不足：</dt>
-                                    <dd>暂时还没发现缺点哦！</dd>
-                                </dl>
-                                <dl>
-                                    <dt>购买日期：</dt>
-                                    <dd>2013-11-24</dd>
-                                </dl>
-                            </div>
-                            <div class="btns">
-                                <a href="" class="reply">回复(0)</a>
-                                <a href="" class="useful">有用(0)</a>
-                            </div>
-                        </div>
-                        <div class="cornor"></div>
-                    </div>
+                    <?php endforeach; ?>
 
                     <!-- 分页信息 start -->
                     <div class="page mt20">
@@ -428,21 +342,22 @@ $this->title = '商品详情';
                     <!-- 分页信息 end -->
 
                     <!--  评论表单 start-->
+                    <?php if(!Yii::$app->user->isGuest && Product::canComment(Yii::$app->user->identity->id, $product->id)): ?>
                     <div class="comment_form mt20">
-                        <form action="">
+                        <form action="#" id="comment-form">
                             <ul>
                                 <li>
-                                    <label for=""> 评分：</label>
-                                    <input type="radio" name="grade"/> <strong class="star star5"></strong>
-                                    <input type="radio" name="grade"/> <strong class="star star4"></strong>
-                                    <input type="radio" name="grade"/> <strong class="star star3"></strong>
-                                    <input type="radio" name="grade"/> <strong class="star star2"></strong>
-                                    <input type="radio" name="grade"/> <strong class="star star1"></strong>
+                                    <label> 评分：</label>
+                                    <input type="radio" name="rank" value="5" checked /> <strong class="star star5"></strong>
+                                    <input type="radio" name="rank" value="4" /> <strong class="star star4"></strong>
+                                    <input type="radio" name="rank" value="3" /> <strong class="star star3"></strong>
+                                    <input type="radio" name="rank" value="2" /> <strong class="star star2"></strong>
+                                    <input type="radio" name="rank" value="1" /> <strong class="star star1"></strong>
                                 </li>
 
                                 <li>
                                     <label for="">评价内容：</label>
-                                    <textarea name="" id="" cols="" rows=""></textarea>
+                                    <textarea name="content"></textarea>
                                 </li>
                                 <li>
                                     <label for="">&nbsp;</label>
@@ -451,6 +366,7 @@ $this->title = '商品详情';
                             </ul>
                         </form>
                     </div>
+                    <?php endif; ?>
                     <!--  评论表单 end-->
                     
                 </div>
@@ -508,5 +424,27 @@ $js = <<<'JS'
             largeImageAttrName: 'href'
         });
     })
+
+    $(document).on('submit', '#comment-form', function(e) {
+        e.preventDefault();
+        productId = $('#product').data('product-id');
+        rank = $('[name=rank]:checked').val();
+        content = $('[name=content]').val();
+        $.ajax({
+            url: '/product/add-comment',
+            method: 'post',
+            dataType: 'json',
+            data: {
+                productId: productId,
+                rank: rank,
+                content: content
+            }
+        }).success(function(data) {
+            alert(data.message);
+            if (data.status) {
+                window.location.reload();
+            }
+        });
+    });
 JS;
 $this->registerJs($js);

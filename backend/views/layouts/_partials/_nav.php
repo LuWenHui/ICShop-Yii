@@ -18,7 +18,7 @@ use yii\helpers\StringHelper;
             ],
             [
                 'label' => '产品管理',
-                'active' => StringHelper::startsWith($this->context->route, 'product'),
+                'active' => StringHelper::startsWith($this->context->route, 'product') && !StringHelper::startsWith($this->context->route, 'product-order'),
                 'icon' => 'i i-statistics icon',
                 'rightIcon' => 'i i-circle-sm',
                 'font' => 'font-bold',
@@ -62,7 +62,7 @@ use yii\helpers\StringHelper;
             ],
             [
                 'label' => '订单管理',
-                'active' => StringHelper::startsWith($this->context->route, 'order'),
+                'active' => StringHelper::startsWith($this->context->route, 'product-order'),
                 'icon' => 'i i-meter icon',
                 'rightIcon' => 'i i-circle-sm',
                 'font' => 'font-bold',

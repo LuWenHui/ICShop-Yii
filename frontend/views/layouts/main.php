@@ -21,8 +21,6 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
     <?= $this->render('partials/_topNav') ?>
     
-    <div style="clear:both;"></div>
-    
     <?= $content ?> 
     
     <?= $this->render('partials/_footerCopyright') ?>

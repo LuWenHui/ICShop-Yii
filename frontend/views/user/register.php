@@ -8,7 +8,7 @@ $this->registerCssFile('style/login.css', ['depends' => ['frontend\assets\AppAss
 
 $this->title = '用户注册';
 ?>
-<?= $this->render('partials/_bodyHead') ?>
+<?= $this->render('/layouts/partials/_bodyHead') ?>
 <!-- 注册主体部分start -->
 <div class="login w990 bc mt10 regist">
     <div class="login_hd">

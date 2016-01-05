@@ -9,6 +9,8 @@ use yii\helpers\Url;
 use common\models\ProductCategory;
 use common\models\ProductPicture;
 use common\models\ProductAttributeAssignment;
+use common\models\ProductOrderCompose;
+use common\models\Comment;
 use SORT_DESC;
 
 /**
@@ -229,7 +231,7 @@ class Product extends \common\components\ActiveRecord
     public static function getRandoms($limit = 5) {
         $command = Yii::$app->db->createCommand(strtr('
 SELECT 
-    *
+    t1.*
 FROM
     :product AS t1
         JOIN
@@ -260,5 +262,13 @@ LIMIT :limit;
             $products[] = $product;
         }
         return $products;
+    }
+
+    public static function canComment($userId, $productId) {
+        return ProductOrderCompose::find()->where(['user_id' => $userId, 'product_id' => $productId])->exists();
+    }
+
+    public function getComments() {
+        return $this->hasMany(Comment::className(), ['product_id' => 'id']);
     }
 }

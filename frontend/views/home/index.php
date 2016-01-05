@@ -214,7 +214,7 @@ $this->title = '京西商城';
                             <li>
                                 <dl>
                                     <dt><a href="<?= Url::to(['product/view', 'id' => $product->id]) ?>"><img src="<?= $product->logoAccessUrl ?>" alt="" /></a></dt>
-                                    <dd><a href=""><?= $product->name ?></a></dd>
+                                    <dd><a href="<?= Url::to(['product/view', 'id' => $product->id]) ?>"><?= $product->name ?></a></dd>
                                     <dd><span>售价：</span><strong> ￥<?= $product->our_price ?></strong></dd>
                                 </dl>
                             </li>
