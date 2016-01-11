@@ -1,6 +1,7 @@
 <?php
 use common\models\ProductCategory;
 use yii\helpers\Url;
+use yii\helpers\Html;
 
 $this->registerJsFile('js/header.js', ['depends' => ['frontend\assets\AppAsset']]);
 ?>
@@ -15,8 +16,8 @@ $this->registerJsFile('js/header.js', ['depends' => ['frontend\assets\AppAsset']
         <div class="search fl">
             <div class="search_form">
                 <div class="form_left fl"></div>
-                <form action="" name="serarch" method="get" class="fl">
-                    <input type="text" class="txt" value="请输入商品关键字" /><input type="submit" class="btn" value="搜索" />
+                <form action="<?= Url::to(['search/index']) ?>" method="get" class="fl">
+                    <input type="text" class="txt" value="<?php if (isset($keyword) && $keyword): ?><?= Html::encode($keyword) ?><?php else: ?>请输入商品关键字<?php endif; ?>" name="keyword" /><input type="submit" class="btn" value="搜索" />
                 </form>
                 <div class="form_right fl"></div>
             </div>

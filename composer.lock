@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f32b0991bcbaf47a7d83986f4647bdcf",
-    "content-hash": "68f4119b6f16507061b15a52b16ef77b",
+    "hash": "71ae6176c30c7034265277c38df9c0b0",
+    "content-hash": "be2fdd61f5102f5dc16c444df2d8a981",
     "packages": [
         {
             "name": "bower-asset/blueimp-canvas-to-blob",
@@ -641,6 +641,64 @@
             "time": "2015-09-11 15:23:20"
         },
         {
+            "name": "hightman/xunsearch",
+            "version": "1.4.10-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hightman/xs-sdk-php.git",
+                "reference": "9d1b9980d8f0d20571df056d644dd7287c6ffa36"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hightman/xs-sdk-php/zipball/9d1b9980d8f0d20571df056d644dd7287c6ffa36",
+                "reference": "9d1b9980d8f0d20571df056d644dd7287c6ffa36",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "lib-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "bin": [
+                "util/xs"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lib/",
+                    "wrapper/yii-ext/"
+                ],
+                "psr-4": {
+                    "hightman\\xunsearch\\": "wrapper/yii2-ext/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "hightman",
+                    "email": "hightman@twomice.net",
+                    "role": "Founder and project leader"
+                }
+            ],
+            "description": "xunsearch php sdk, include yii, yii2 supports",
+            "homepage": "http://www.xunsearch.com/",
+            "keywords": [
+                "search engine",
+                "xunsearch",
+                "yii",
+                "yii2"
+            ],
+            "time": "2015-08-05 07:43:01"
+        },
+        {
             "name": "idarex/pingpp-yii2",
             "version": "dev-master",
             "source": {
@@ -1000,7 +1058,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PingPlusPlus/pingpp-php/zipball/13643158b3b229d67b9bf99665f8d80144307aab",
+                "url": "https://api.github.com/repos/PingPlusPlus/pingpp-php/zipball/96c1854c5fff736238002c23e05d1e403c2d5c96",
                 "reference": "13643158b3b229d67b9bf99665f8d80144307aab",
                 "shasum": ""
             },
@@ -1932,7 +1990,8 @@
         "bower-asset/jquery": 0,
         "machour/yii2-notifications": 20,
         "idarex/pingpp-yii2": 20,
-        "mickgeek/yii2-actionbar": 20
+        "mickgeek/yii2-actionbar": 20,
+        "hightman/xunsearch": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,

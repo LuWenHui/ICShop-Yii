@@ -25,12 +25,12 @@ $this->title = '京西商城';
 			<div class="area">
 				<div class="slide_items">
 					<ul>
-						<li><a href=""><img src="images/index_slide1.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/index_slide2.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/index_slide3.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/index_slide4.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/index_slide5.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/index_slide6.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/index_slide1.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/index_slide2.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/index_slide3.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/index_slide4.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/index_slide5.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/index_slide6.jpg" alt="" /></a></li>
 					</ul>
 				</div>
 				<div class="slide_controls">
@@ -49,7 +49,7 @@ $this->title = '京西商城';
 	
 		<!-- 快报区域 start-->
 		<div class="coll_right fl ml10">
-			<div class="ad"><a href=""><img src="images/ad.jpg" alt="" /></a></div>
+			<div class="ad"><a href=""><img src="/images/ad.jpg" alt="" /></a></div>
 			
 			<div class="news mt10">
 				<h2><a href="">更多快报&nbsp;></a><strong>网站快报</strong></h2>
@@ -111,11 +111,11 @@ $this->title = '京西商城';
 					<div class="travel none">
 						<ul>
 							<li>
-								<a href=""><img src="images/holiday.jpg" alt="" /></a>
+								<a href=""><img src="/images/holiday.jpg" alt="" /></a>
 								<a href="" class="button">度假查询</a>
 							</li>
 							<li>
-								<a href=""><img src="images/scenic.jpg" alt="" /></a>
+								<a href=""><img src="/images/scenic.jpg" alt="" /></a>
 								<a href="" class="button">景点查询</a>
 							</li>
 						</ul>
@@ -124,16 +124,16 @@ $this->title = '京西商城';
 						
 					<!-- 彩票 start -->
 					<div class="lottery none">
-						<p><img src="images/lottery.jpg" alt="" /></p>
+						<p><img src="/images/lottery.jpg" alt="" /></p>
 					</div>
 					<!-- 彩票 end -->
 
 					<!-- 游戏 start -->
 					<div class="game none">
 						<ul>
-							<li><a href=""><img src="images/sanguo.jpg" alt="" /></a></li>
-							<li><a href=""><img src="images/taohua.jpg" alt="" /></a></li>
-							<li><a href=""><img src="images/wulin.jpg" alt="" /></a></li>
+							<li><a href=""><img src="/images/sanguo.jpg" alt="" /></a></li>
+							<li><a href=""><img src="/images/taohua.jpg" alt="" /></a></li>
+							<li><a href=""><img src="/images/wulin.jpg" alt="" /></a></li>
 						</ul>
 					</div>
 					<!-- 游戏 end -->
@@ -233,13 +233,13 @@ $this->title = '京西商城';
 			<h2><strong>网站首发</strong></h2>
 			<div class="sidebar_wrap">
 				<dl class="first">
-					<dt class="fl"><a href=""><img src="images/viewsonic.jpg" alt="" /></a></dt>
+					<dt class="fl"><a href=""><img src="/images/viewsonic.jpg" alt="" /></a></dt>
 					<dd><strong><a href="">ViewSonic优派N710 </a></strong> <em>首发</em></dd>
 					<dd>苹果iphone 5免费送！攀高作为全球智能语音血压计领导品牌，新推出的黑金刚高端智能电子血压计，改变传统测量方式让血压测量迈入一体化时代。</dd>
 				</dl>
 
 				<dl>
-					<dt class="fr"><a href=""><img src="images/samsung.jpg" alt="" /></a></dt>
+					<dt class="fr"><a href=""><img src="/images/samsung.jpg" alt="" /></a></dt>
 					<dd><strong><a href="">Samsung三星Galaxy</a></strong> <em>首发</em></dd>
 					<dd>电视百科全书，360°无死角操控，感受智能新体验！双核CPU+双核GPU+MEMC运动防抖，58寸大屏打造全新视听盛宴！</dd>
 				</dl>
@@ -277,7 +277,7 @@ $this->title = '京西商城';
 						<li><a href=""><b>.</b>网卡</a></li>
 						<li><a href=""><b>.</b>交换机</a></li>
 					</ul>
-					<p><a href=""><img src="images/notebook.jpg" alt="" /></a></p>
+					<p><a href=""><img src="/images/notebook.jpg" alt="" /></a></p>
 				</div>
 				
 
@@ -298,7 +298,7 @@ $this->title = '京西商城';
 						<ul>
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/hpG4.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/hpG4.jpg" alt="" /></a></dt>
 									<dd><a href="">惠普G4-1332TX 14英寸笔</a></dd>
 									<dd><span>售价：</span> <strong>￥2999.00</strong></dd>
 								</dl>
@@ -306,7 +306,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/thinkpad e420.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/thinkpad e420.jpg" alt="" /></a></dt>
 									<dd><a href="">ThinkPad E42014英寸笔..</a></dd>
 									<dd><span>售价：</span> <strong>￥4199.00</strong></dd>
 								</dl>
@@ -314,7 +314,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/acer4739.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/acer4739.jpg" alt="" /></a></dt>
 									<dd><a href="">宏碁AS4739-382G32Mnk</a></dd>
 									<dd><span>售价：</span> <strong>￥2799.00</strong></dd>
 								</dl>
@@ -322,7 +322,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/samsung6800.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/samsung6800.jpg" alt="" /></a></dt>
 									<dd><a href="">三星Galaxy Tab P6800.</a></dd>
 									<dd><span>售价：</span> <strong>￥4699.00</strong></dd>
 								</dl>
@@ -330,7 +330,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/lh531.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/lh531.jpg" alt="" /></a></dt>
 									<dd><a href="">富士通LH531 14.1英寸笔记</a></dd>
 									<dd><span>售价：</span> <strong>￥2189.00</strong></dd>
 								</dl>
@@ -338,7 +338,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/qinghuax2.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/qinghuax2.jpg" alt="" /></a></dt>
 									<dd><a href="">清华同方精锐X2笔记本 </a></dd>
 									<dd><span>售价：</span> <strong>￥2499.00</strong></dd>
 								</dl>
@@ -350,7 +350,7 @@ $this->title = '京西商城';
 						<ul>
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/hpG4.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/hpG4.jpg" alt="" /></a></dt>
 									<dd><a href="">惠普G4-1332TX 14英寸笔</a></dd>
 									<dd><span>售价：</span> <strong>￥2999.00</strong></dd>
 								</dl>
@@ -358,7 +358,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/qinghuax2.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/qinghuax2.jpg" alt="" /></a></dt>
 									<dd><a href="">清华同方精锐X2笔记本 </a></dd>
 									<dd><span>售价：</span> <strong>￥2499.00</strong></dd>
 								</dl>
@@ -371,7 +371,7 @@ $this->title = '京西商城';
 						<ul>
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/thinkpad e420.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/thinkpad e420.jpg" alt="" /></a></dt>
 									<dd><a href="">ThinkPad E42014英寸笔..</a></dd>
 									<dd><span>售价：</span> <strong>￥4199.00</strong></dd>
 								</dl>
@@ -379,7 +379,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/acer4739.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/acer4739.jpg" alt="" /></a></dt>
 									<dd><a href="">宏碁AS4739-382G32Mnk</a></dd>
 									<dd><span>售价：</span> <strong>￥2799.00</strong></dd>
 								</dl>
@@ -391,7 +391,7 @@ $this->title = '京西商城';
 						<ul>
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/acer4739.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/acer4739.jpg" alt="" /></a></dt>
 									<dd><a href="">宏碁AS4739-382G32Mnk</a></dd>
 									<dd><span>售价：</span> <strong>￥2799.00</strong></dd>
 								</dl>
@@ -399,7 +399,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/samsung6800.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/samsung6800.jpg" alt="" /></a></dt>
 									<dd><a href="">三星Galaxy Tab P6800.</a></dd>
 									<dd><span>售价：</span> <strong>￥4699.00</strong></dd>
 								</dl>
@@ -411,7 +411,7 @@ $this->title = '京西商城';
 						<ul>
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/samsung6800.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/samsung6800.jpg" alt="" /></a></dt>
 									<dd><a href="">三星Galaxy Tab P6800.</a></dd>
 									<dd><span>售价：</span> <strong>￥4699.00</strong></dd>
 								</dl>
@@ -419,7 +419,7 @@ $this->title = '京西商城';
 
 							<li>
 								<dl>
-									<dt><a href=""><img src="images/lh531.jpg" alt="" /></a></dt>
+									<dt><a href=""><img src="/images/lh531.jpg" alt="" /></a></dt>
 									<dd><a href="">富士通LH531 14.1英寸笔记</a></dd>
 									<dd><span>售价：</span> <strong>￥2189.00</strong></dd>
 								</dl>
@@ -440,15 +440,15 @@ $this->title = '京西商城';
 				<h2><a href="">更多品牌&nbsp;></a><strong>品牌旗舰店</strong></h2>
 				<div class="sidebar_wrap">
 					<ul>
-						<li><a href=""><img src="images/dell.gif" alt="" /></a></li>
-						<li><a href=""><img src="images/acer.gif" alt="" /></a></li>
-						<li><a href=""><img src="images/fujitsu.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/hp.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/lenove.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/samsung.gif" alt="" /></a></li>
-						<li><a href=""><img src="images/dlink.gif" alt="" /></a></li>
-						<li><a href=""><img src="images/seagate.jpg" alt="" /></a></li>
-						<li><a href=""><img src="images/intel.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/dell.gif" alt="" /></a></li>
+						<li><a href=""><img src="/images/acer.gif" alt="" /></a></li>
+						<li><a href=""><img src="/images/fujitsu.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/hp.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/lenove.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/samsung.gif" alt="" /></a></li>
+						<li><a href=""><img src="/images/dlink.gif" alt="" /></a></li>
+						<li><a href=""><img src="/images/seagate.jpg" alt="" /></a></li>
+						<li><a href=""><img src="/images/intel.jpg" alt="" /></a></li>
 					</ul>
 				</div>
 			</div>
@@ -471,7 +471,7 @@ $this->title = '京西商城';
 			
 			<!-- 广告 start -->
 			<div class="ads mt10">
-				<a href=""><img src="images/canon.jpg" alt="" /></a>
+				<a href=""><img src="/images/canon.jpg" alt="" /></a>
 			</div>
 			<!-- 广告 end -->
 		</div>

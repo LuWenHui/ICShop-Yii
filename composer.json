@@ -35,7 +35,8 @@
         "nterms/yii2-pagesize-widget": "*",
         "mickgeek/yii2-actionbar": "dev-master",
         "omnilight/yii2-shopping-cart": "*",
-        "idarex/pingpp-yii2": "dev-master"
+        "idarex/pingpp-yii2": "dev-master",
+        "hightman/xunsearch": "*@beta"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
